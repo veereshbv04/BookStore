@@ -1,57 +1,55 @@
 export default function ProductFilter() {
     return (
-        <form action="#" class="product-filter">
+        <form action="#" className="product-filter">
 
-            <div class="filter highlight">
+            <div className="filter highlight">
                 filter
                 <input type="reset" />
             </div>
 
-            <div class="scale">
-                <h4 class="highlight">Range</h4>
-                <div class="scale-values">
+            <div className="scale">
+                <h4 className="highlight">Range</h4>
+                <div className="scale-values">
                     <span>20</span>
                     <span>20</span>
                     <span>20</span>
                 </div>
-                <input type="range" class="slider" />
+                <input type="range" className="slider" />
             </div>
 
-            <div class="category">
-                <h4 class="highlight">Category</h4>
-                <label for="men">
+            <div className="category">
+                <h4 className="highlight">Category</h4>
+                <label >
                     <input type="checkbox" value="fiction" />Fiction
                 </label>
-                <label for="women">
-                    <input type="checkbox" value="self-help" />Self Help
+                {/* <label for="women">
+                    <input type="checkbox" value="romantic" />Romantic
+                </label> */}
+                <label >
+                    <input type="checkbox" value="horror" />Horror
                 </label>
-                <label for="women">
-                    <input type="checkbox" value="technical" />Technical
-                </label>
-                <label for="women">
-                    <input type="checkbox" value="non-fiction" />Non-Fiction
-                </label>
+
             </div>
 
-            <div class="category">
-                <h4 class="highlight">Rating</h4>
-                <label for="men">
+            <div className="category">
+                <h4 className="highlight">Rating</h4>
+                <label >
                     <input type="radio" value="4" />4 Stars and above
                 </label>
-                <label for="women">
+                <label >
                     <input type="radio" value="3" />3 Stars and above
                 </label>
-                <label for="women">
+                <label >
                     <input type="radio" value="2" />2 Stars and above
                 </label>
             </div>
 
-            <div class="category">
-                <h4 class="highlight">Sort by</h4>
-                <label for="men">
+            <div className="category">
+                <h4 className="highlight">Sort by</h4>
+                <label >
                     <input type="radio" /> Price - Low to High
                 </label>
-                <label for="women">
+                <label >
                     <input type="radio" /> Price - High to Low
                 </label>
             </div>
