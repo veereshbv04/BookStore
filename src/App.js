@@ -1,10 +1,13 @@
 import "./App.css";
-import logo from "./logo.png";
+import {Header} from "./components/index"
+import {ProductListing} from "./pages/index"
+// import logo from "./logo.png";
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome Veeresh B V</h1>
+      <Header/>
+      <ProductListing/>
     </div>
   );
 }
