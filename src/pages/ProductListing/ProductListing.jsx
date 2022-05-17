@@ -14,7 +14,6 @@ export default function ProductListing() {
             try {
                 const responseData = await axios.get("/api/products")
                 setProductsList(responseData.data.products)
-                console.log(responseData.data.products)
             } catch (error) {
                 console.log(error)
             }
@@ -28,7 +27,8 @@ export default function ProductListing() {
                 <ProductsFilter />
                 <section className="product-display wrap">
                     {productsList.map(product => (
-                        <Card key={product.id} />
+                        <Card product={product} key={product._id} />
+
                     ))}
                 </section>
             </div>

@@ -11,7 +11,7 @@ export const products = [
   {
     _id: uuid(),
     productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
-    title: "Think and Grow Rich",
+    title: "Do Epic Shit",
     author: "Shiv Khera",
     price: {
       original: 869,
@@ -22,7 +22,7 @@ export const products = [
   },
    {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/ikigai.jpg',
     title: "Danielle Steel Spy",
     author: "Robert Brown",
     price: {
@@ -34,7 +34,7 @@ export const products = [
   },
    {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/ikigai.jpg',
     title: "Wishpering in Dark",
     author: "Ruskin Bond",
     price: {
