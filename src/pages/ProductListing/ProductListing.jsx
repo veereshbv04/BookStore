@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useRef } from "react/cjs/react.production.min"
 import { Card, ProductsFilter } from "../../components"
 
 
@@ -28,7 +27,6 @@ export default function ProductListing() {
                 <section className="product-display wrap">
                     {productsList.map(product => (
                         <Card product={product} key={product._id} />
-
                     ))}
                 </section>
             </div>

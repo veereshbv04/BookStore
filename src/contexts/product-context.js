@@ -1,0 +1,25 @@
+import { createContext, useContext, useReducer } from "react";
+import { productReducer } from "../reducer/productReducer";
+const ProductContext = createContext(null)
+
+const ProductProvider = ({children})=>{
+    const initialState  = {
+        category:{fiction:true, horror:true},
+        rating:"",
+        sortBy:""
+    }
+    const [state, dispatch] = useReducer(productReducer,initialState)
+    return(
+        <ProductContext.Provider>{children}</ProductContext.Provider>
+    )
+}
+
+const useProduct = ()=>{
+    const context = useContext(ProductContext)
+    if(!context){
+        throw new Error("useProduct only inside the product provider");
+    }
+    return context
+}
+
+export {ProductProvider, useProduct}
