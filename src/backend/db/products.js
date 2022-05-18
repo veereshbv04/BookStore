@@ -18,6 +18,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:5,
     categoryName: "fiction",
   },
    {
@@ -30,6 +31,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:4,
     categoryName: "fiction",
   },
    {
@@ -42,6 +44,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "fiction",
   },
    {
@@ -54,6 +57,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:2,
     categoryName: "fiction",
   },
   {
@@ -66,6 +70,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:2,
     categoryName: "fiction",
   },
   {
@@ -78,6 +83,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3.5,
     categoryName: "fiction",
   },
   {
@@ -90,6 +96,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:4,
     categoryName: "fiction",
   },
   
@@ -104,6 +111,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:5,
     categoryName: "horror",
   },
     {
@@ -116,6 +124,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
     {
@@ -128,6 +137,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
     {
@@ -140,6 +150,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
     {
@@ -152,6 +163,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
     {
@@ -164,6 +176,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
   {
@@ -176,6 +189,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
   {
@@ -188,6 +202,7 @@ export const products = [
       discounted: 699,
       discount: 20
     },
+    rating:3,
     categoryName: "horror",
   },
 
