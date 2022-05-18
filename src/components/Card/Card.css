@@ -1,0 +1,15 @@
+:root{
+    --primary-color:orange;
+    --background-color:rgb(187, 240, 207);
+    --text-color:blue;
+    --section-background:rgba(230, 240, 233, 0.767);
+    --dark-background:grey;
+    --green-color:green;
+    --yellow-color:yellow;
+    
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
