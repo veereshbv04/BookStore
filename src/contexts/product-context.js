@@ -10,7 +10,7 @@ const ProductProvider = ({children})=>{
     }
     const [state, dispatch] = useReducer(productReducer,initialState)
     return(
-        <ProductContext.Provider>{children}</ProductContext.Provider>
+        <ProductContext.Provider value={{state, dispatch}}>{children}</ProductContext.Provider>
     )
 }
 

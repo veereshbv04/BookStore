@@ -1,12 +1,13 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Card, ProductsFilter } from "../../components"
-
-
+import { useProduct } from "../../contexts/product-context"
+import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFilterUtils"
 export default function ProductListing() {
-
+    const { state } = useProduct()
+    console.log(state)
     const [productsList, setProductsList] = useState([])
-
+    const FilteredProductList = getFilteredProducts(state, productsList)
     useEffect(() =>
         (async function fetchProducts() {
 
