@@ -15,7 +15,7 @@ export const products = [
     author: "Shiv Khera",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 299,
       discount: 20
     },
     rating:5,
@@ -28,7 +28,7 @@ export const products = [
     author: "Robert Brown",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 689,
       discount: 20
     },
     rating:4,
@@ -41,7 +41,7 @@ export const products = [
     author: "Ruskin Bond",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 259,
       discount: 20
     },
     rating:3,
@@ -54,7 +54,7 @@ export const products = [
     author: "Garcia Hector",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 500,
       discount: 20
     },
     rating:2,
@@ -67,7 +67,7 @@ export const products = [
     author: "Saeed Naqvi",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 237,
       discount: 20
     },
     rating:2,
@@ -80,7 +80,7 @@ export const products = [
     author: "Garcia Hector",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 125,
       discount: 20
     },
     rating:3.5,
@@ -93,7 +93,7 @@ export const products = [
     author: "J K Rowling",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 126,
       discount: 20
     },
     rating:4,
@@ -108,7 +108,7 @@ export const products = [
     author: "Junaid Qureshi",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 788,
       discount: 20
     },
     rating:5,
@@ -121,7 +121,7 @@ export const products = [
     author: "Ruskin Bond",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 566,
       discount: 20
     },
     rating:3,
@@ -134,7 +134,7 @@ export const products = [
     author: "Chetan Bhagat",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 128,
       discount: 20
     },
     rating:3,
@@ -147,7 +147,7 @@ export const products = [
     author: "Anita Krishnan",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 446,
       discount: 20
     },
     rating:3,
@@ -160,7 +160,7 @@ export const products = [
     author: "Chandradip Paitandi",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 556,
       discount: 20
     },
     rating:3,
@@ -186,7 +186,7 @@ export const products = [
     author: "Stephen King",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 470,
       discount: 20
     },
     rating:3,
@@ -199,7 +199,7 @@ export const products = [
     author: "Nag Mani",
     price: {
       original: 869,
-      discounted: 699,
+      discounted: 666,
       discount: 20
     },
     rating:3,
