@@ -1,6 +1,10 @@
+import { useProduct } from "../../contexts/product-context"
 export default function ProductFilter() {
+    const { state, dispatch } = useProduct();
+    const { rating, sortBy } = state;
+
     return (
-        <form action="#" className="product-filter">
+        <fieldset action="#" className="product-filter">
 
             <div className="filter highlight">
                 filter
@@ -33,8 +37,9 @@ export default function ProductFilter() {
 
             <div className="category">
                 <h4 className="highlight">Rating</h4>
+
                 <label >
-                    <input type="radio" value="4" />4 Stars and above
+                    <input type="radio" value="4" />4 stars and above
                 </label>
                 <label >
                     <input type="radio" value="3" />3 Stars and above
@@ -46,14 +51,32 @@ export default function ProductFilter() {
 
             <div className="category">
                 <h4 className="highlight">Sort by</h4>
-                <label >
-                    <input type="radio" /> Price - Low to High
+
+                <label for="radio-input-1">
+                    <input
+                        type="radio"
+                        id="radio-input-1"
+                        name="radio-item"
+                        // value="lowToHigh"
+                        checked={sortBy === "LOW_TO_HIGH"}
+                        onChange={() => dispatch({ type: "SORT_BY", payload: "LOW_TO_HIGH" })}
+                    />
+                    <span>Price - Low to high</span>
                 </label>
-                <label >
-                    <input type="radio" /> Price - High to Low
+                <label for="radio-input-2">
+                    <input
+                        type="radio"
+                        id="radio-input-2"
+                        name="radio-item"
+                        value="highToLow"
+                        checked={sortBy === "HIGH_TO_LOW"}
+                        onChange={() => dispatch({ type: "SORT_BY", payload: "HIGH_TO_LOW" })}
+                    />
+                    <span>Price - High to low</span>
                 </label>
+
             </div>
 
-        </form>
+        </fieldset>
     )
 }

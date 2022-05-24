@@ -8,6 +8,7 @@ export default function ProductListing() {
     console.log(state)
     const [productsList, setProductsList] = useState([])
     const FilteredProductList = getFilteredProducts(state, productsList)
+    console.log(FilteredProductList)
     useEffect(() =>
         (async function fetchProducts() {
 
