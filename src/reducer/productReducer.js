@@ -6,8 +6,10 @@ function productReducer(state, action){
     }
     switch (action.type) {
         case "SORT_BY":
-            return{...state, sortBy:action.payload}
-    
+            return {...state, sortBy:action.payload}
+        
+        case "RATING":
+            return {...state, rating:action.payload}
     
         default:
             return state

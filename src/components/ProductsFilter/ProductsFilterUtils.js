@@ -2,11 +2,13 @@ import { useProduct } from "../../contexts/product-context"
 
 const getSortedProducts = ({sortBy}, products)=>{
     const sortedProducts = [...products]
+    let test = []
     switch(sortBy){
+
         case "HIGH_TO_LOW":
             return sortedProducts.sort((product1, product2)=>product2.price.discounted - product1.price.discounted)
-        case "LOW_TO_HiGH":
-            return sortedProducts.sort((product1,product2) => product1.price.discounted - product2.price.discounted)
+        case "LOW_TO_HIGH":
+            return sortedProducts.sort((product1, product2) => product1.price.discounted - product2.price.discounted)
         default:
             return sortedProducts
     }
@@ -22,7 +24,7 @@ const applyFilters = (state, ...args)=>(products)=>{
         return curr(state, acc)
     },products)
 }
-console.log("in productfilterutils.js")
+
 export const getFilteredProducts =(state, products)=> applyFilters(
     state,
     getSortedProducts,

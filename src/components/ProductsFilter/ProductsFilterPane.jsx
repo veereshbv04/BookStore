@@ -38,15 +38,48 @@ export default function ProductFilter() {
             <div className="category">
                 <h4 className="highlight">Rating</h4>
 
-                <label >
-                    <input type="radio" value="4" />4 stars and above
+                {/* ggg */}
+                <label for="rating-radio-input-1">
+                    <input
+                        type="radio"
+                        id="rating-radio-input-1"
+                        name="rating-radio-item"
+                        value="4"
+                        onChange={(event) => dispatch({ type: "RATING", payload: event.target.value })}
+                    />
+                    <span>4 and above</span>
                 </label>
-                <label >
-                    <input type="radio" value="3" />3 Stars and above
+                <label for="rating-radio-input-1">
+                    <input
+                        type="radio"
+                        id="rating-radio-input-1"
+                        name="rating-radio-item"
+                        value="3"
+                        onChange={(event) => dispatch({ type: "RATING", payload: event.target.value })}
+                    />
+                    <span>3 and above</span>
                 </label>
-                <label >
-                    <input type="radio" value="2" />2 Stars and above
+                <label for="rating-radio-input-1">
+                    <input
+                        type="radio"
+                        id="rating-radio-input-1"
+                        name="rating-radio-item"
+                        value="2"
+                        onChange={(event) => dispatch({ type: "RATING", payload: event.target.value })}
+                    />
+                    <span>2 and above</span>
                 </label>
+                <label for="rating-radio-input-1">
+                    <input
+                        type="radio"
+                        id="rating-radio-input-1"
+                        name="rating-radio-item"
+                        value="1"
+                        onChange={(event) => dispatch({ type: "RATING", payload: event.target.value })}
+                    />
+                    <span>1 and above</span>
+                </label>
+
             </div>
 
             <div className="category">

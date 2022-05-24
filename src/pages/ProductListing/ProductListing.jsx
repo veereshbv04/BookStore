@@ -27,7 +27,7 @@ export default function ProductListing() {
             <div className="grid grid-2-8">
                 <ProductsFilter />
                 <section className="product-display wrap">
-                    {productsList.map(product => (
+                    {FilteredProductList.map(product => (
                         <Card product={product} key={product._id} />
                     ))}
                 </section>
