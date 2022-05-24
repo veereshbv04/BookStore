@@ -3,7 +3,7 @@ function productReducer(state, action){
         category:{fiction:true, horror:true},
         rating:"",
         sortBy:"",
-        range:""
+        range:"600"
     }
     switch (action.type) {
         case "SORT_BY":

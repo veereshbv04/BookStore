@@ -8,7 +8,8 @@ export default function ProductFilter() {
 
             <div className="filter highlight">
                 filter
-                <input type="reset" />
+                {/* error while adding this, check bookmarked page */}
+                <input type="reset" onClick={dispatch({ type: "CLEAR_ALL" })} />
             </div>
 
             <div className="scale">
