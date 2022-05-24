@@ -31,6 +31,14 @@ const getCategorisedProduct = ({category}, products)=>{
     }
 }
 
+const getProductsInRange = ({range}, products)=>{
+    console.log("in proucts range utils")
+    console.log(products)
+    let test = products.filter(product => product.price.discounted <= range)
+    console.log(test)
+    return test
+}
+
 const applyFilters = (state, ...args)=>(products)=>{
     return args.reduce((acc,curr)=>{
         return curr(state, acc)
@@ -41,5 +49,6 @@ export const getFilteredProducts =(state, products)=> applyFilters(
     state,
     getSortedProducts,
     getRatedProducts,
-    getCategorisedProduct
+    getCategorisedProduct,
+    getProductsInRange
 )(products)

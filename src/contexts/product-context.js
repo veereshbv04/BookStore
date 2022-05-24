@@ -6,7 +6,8 @@ const ProductProvider = ({children})=>{
     const initialState  = {
         category:{fiction:true, horror:true},
         rating:"",
-        sortBy:""
+        sortBy:"",
+        range:""
     }
     const [state, dispatch] = useReducer(productReducer,initialState)
     return(

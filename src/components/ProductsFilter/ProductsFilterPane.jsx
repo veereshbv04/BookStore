@@ -14,11 +14,12 @@ export default function ProductFilter() {
             <div className="scale">
                 <h4 className="highlight">Range</h4>
                 <div className="scale-values">
-                    <span>20</span>
-                    <span>20</span>
-                    <span>20</span>
+                    <span>100</span>
+                    <span>1000</span>
                 </div>
-                <input type="range" className="slider" />
+                {/* (event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value }) */}
+                <input type="range" min="100" max="1000" step="100" value={state.range} className="slider" onChange={(event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value })} />
+                <span>{state.range}</span>
             </div>
 
             <div className="category">

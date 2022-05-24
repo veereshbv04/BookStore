@@ -2,7 +2,8 @@ function productReducer(state, action){
     const initialState  = {
         category:{fiction:true, horror:true},
         rating:"",
-        sortBy:""
+        sortBy:"",
+        range:""
     }
     switch (action.type) {
         case "SORT_BY":
@@ -17,6 +18,10 @@ function productReducer(state, action){
             }else if(action.payload === "horror"){
                 return {...state, category:{...state["category"], horror:!state.category.horror}}
             }
+        
+        case "PRICE_RANGE":
+            return {...state, range:action.payload }
+        
         default:
             return state
     }
