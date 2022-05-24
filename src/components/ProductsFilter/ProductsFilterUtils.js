@@ -2,7 +2,7 @@ import { useProduct } from "../../contexts/product-context"
 
 const getSortedProducts = ({sortBy}, products)=>{
     const sortedProducts = [...products]
-    let test = []
+    
     switch(sortBy){
 
         case "HIGH_TO_LOW":
@@ -18,6 +18,18 @@ const getRatedProducts =({rating}, products)=>{
     return products.filter(product => product.rating >=rating)
 }
 
+const getCategorisedProduct = ({category}, products)=>{
+    console.log(category)
+    if(category["fiction"] && category["horror"]){
+        return products
+    }else if(category["fiction"]){
+        return products.filter(product => product.categoryName === "fiction")
+    }else if(category["horror"]){
+        return products.filter(product => product.categoryName === "horror")
+    }else{
+        return products
+    }
+}
 
 const applyFilters = (state, ...args)=>(products)=>{
     return args.reduce((acc,curr)=>{
@@ -28,5 +40,6 @@ const applyFilters = (state, ...args)=>(products)=>{
 export const getFilteredProducts =(state, products)=> applyFilters(
     state,
     getSortedProducts,
-    getRatedProducts
+    getRatedProducts,
+    getCategorisedProduct
 )(products)

@@ -24,13 +24,11 @@ export default function ProductFilter() {
             <div className="category">
                 <h4 className="highlight">Category</h4>
                 <label >
-                    <input type="checkbox" value="fiction" />Fiction
+                    <input name="category" type="checkbox" value="fiction" checked={state.category["fiction"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Fiction
                 </label>
-                {/* <label for="women">
-                    <input type="checkbox" value="romantic" />Romantic
-                </label> */}
+
                 <label >
-                    <input type="checkbox" value="horror" />Horror
+                    <input name="category" type="checkbox" value="horror" checked={state.category["horror"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Horror
                 </label>
 
             </div>
@@ -39,7 +37,7 @@ export default function ProductFilter() {
                 <h4 className="highlight">Rating</h4>
 
                 {/* ggg */}
-                <label for="rating-radio-input-1">
+                <label>
                     <input
                         type="radio"
                         id="rating-radio-input-1"
@@ -49,7 +47,7 @@ export default function ProductFilter() {
                     />
                     <span>4 and above</span>
                 </label>
-                <label for="rating-radio-input-1">
+                <label >
                     <input
                         type="radio"
                         id="rating-radio-input-1"
@@ -59,7 +57,7 @@ export default function ProductFilter() {
                     />
                     <span>3 and above</span>
                 </label>
-                <label for="rating-radio-input-1">
+                <label >
                     <input
                         type="radio"
                         id="rating-radio-input-1"
@@ -69,7 +67,7 @@ export default function ProductFilter() {
                     />
                     <span>2 and above</span>
                 </label>
-                <label for="rating-radio-input-1">
+                <label >
                     <input
                         type="radio"
                         id="rating-radio-input-1"

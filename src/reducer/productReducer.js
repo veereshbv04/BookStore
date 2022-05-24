@@ -10,7 +10,13 @@ function productReducer(state, action){
         
         case "RATING":
             return {...state, rating:action.payload}
-    
+        
+        case "CATEGORY":
+            if(action.payload === "fiction"){
+                return {...state, category:{...state["category"], fiction:!state.category.fiction}}
+            }else if(action.payload === "horror"){
+                return {...state, category:{...state["category"], horror:!state.category.horror}}
+            }
         default:
             return state
     }
