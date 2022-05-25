@@ -9,8 +9,7 @@ function App() {
     <div className="App">
       <Header/>
       <Router/>
-
-      {/* <ProductListing/> */}
+      {/* starting from "/" home page routing happens , header remains always as it is a single entity in parent app component */}
     </div>
   );
 }
