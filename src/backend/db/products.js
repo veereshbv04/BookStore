@@ -23,7 +23,7 @@ export const products = [
   },
    {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/ikigai.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/daniellesteelspy.jpg',
     title: "Danielle Steel Spy",
     author: "Robert Brown",
     price: {
@@ -36,7 +36,7 @@ export const products = [
   },
    {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/ikigai.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/wishperingindark.jpg',
     title: "Wishpering in Dark",
     author: "Ruskin Bond",
     price: {
@@ -49,7 +49,7 @@ export const products = [
   },
    {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/ikigai.jpg',
     title: "Ikigai",
     author: "Garcia Hector",
     price: {
@@ -62,7 +62,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/beingtheother.jpg',
     title: "Being The Other",
     author: "Saeed Naqvi",
     price: {
@@ -75,7 +75,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/tearsofjhelum.jpg',
     title: "Tears of Jhelum",
     author: "Garcia Hector",
     price: {
@@ -88,7 +88,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/casualvacancy.jpg',
     title: "Casual Vacancy",
     author: "J K Rowling",
     price: {
@@ -103,7 +103,7 @@ export const products = [
   // 8 Horror Books
     {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/poisonapple.jpg',
     title: "Poison Apple",
     author: "Junaid Qureshi",
     price: {
@@ -116,7 +116,7 @@ export const products = [
   },
     {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/thehouseofstrangestories.jpg',
     title: "The House Of Strange Stories",
     author: "Ruskin Bond",
     price: {
@@ -129,7 +129,7 @@ export const products = [
   },
     {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/girlinroom105.jpg',
     title: "The Girl In Room 105",
     author: "Chetan Bhagat",
     price: {
@@ -142,7 +142,7 @@ export const products = [
   },
     {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/ghosts-of-the-silent-hills-stories.jpg',
     title: "Ghost Of The Silent Hills",
     author: "Anita Krishnan",
     price: {
@@ -155,7 +155,7 @@ export const products = [
   },
     {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/almostdark.jpg',
     title: "Almost Dark",
     author: "Chandradip Paitandi",
     price: {
@@ -181,7 +181,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/Shiningnovel.jpg',
     title: "The Shining",
     author: "Stephen King",
     price: {
@@ -194,7 +194,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/doepicshit.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
     title: "The Green Room",
     author: "Nag Mani",
     price: {
