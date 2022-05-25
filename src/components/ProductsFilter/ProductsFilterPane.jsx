@@ -8,8 +8,12 @@ export default function ProductFilter() {
 
             <div className="filter highlight">
                 filter
+                <button type="reset" onClick={() => {
+                    console.log("from clear");
+                    dispatch({ type: "CLEAR_ALL" })
+                }}>Reset</button>
                 {/* error while adding this, check bookmarked page */}
-                <input type="reset" onClick={dispatch({ type: "CLEAR_ALL" })} />
+                {/* <input type="reset" onClick={dispatch({ type: "CLEAR_ALL" })} /> */}
             </div>
 
             <div className="scale">
@@ -19,7 +23,7 @@ export default function ProductFilter() {
                     <span>1000</span>
                 </div>
                 {/* (event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value }) */}
-                <input type="range" min="100" max="1000" step="100" value={state.range} className="slider" onChange={(event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value })} />
+                <input type="range" min="200" max="1000" step="100" value={state.range} className="slider" onChange={(event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value })} />
                 <span>{state.range}</span>
             </div>
 

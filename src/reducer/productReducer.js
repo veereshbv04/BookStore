@@ -1,7 +1,7 @@
 function productReducer(state, action){
     const initialState  = {
         category:{fiction:true, horror:true},
-        rating:"",
+        rating:1,
         sortBy:"",
         range:"600"
     }
@@ -21,6 +21,9 @@ function productReducer(state, action){
         
         case "PRICE_RANGE":
             return {...state, range:action.payload }
+        
+        case "CLEAR_ALL":
+            return initialState
         
         default:
             return state
