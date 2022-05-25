@@ -1,4 +1,5 @@
 // import { doepicshit } from "../../../public/assets/book-images"
+import { Link } from "react-router-dom"
 import "./Card.css"
 export default function Card({ product }) {
 
@@ -17,9 +18,10 @@ export default function Card({ product }) {
                     <span className="price highlight"><strong>{original}  </strong></span>
                     <span>{rating}</span>
                 </div>
-                <button className="btn btn-primary"><a href="/pages/cart.html">Add to Cart</a></button>
+
+                <button className="btn btn-primary"><Link to="/cart">Add to Cart</Link></button>
                 <br />
-                <button className="btn btn-primary"><a href="/pages/cart.html">Add to Wishlist</a></button>
+                <button className="btn btn-primary"><Link to="/wishlist">Add to Wishlist</Link></button>
                 <span className="fa fa-heart-o heart w3-xxlarge"></span>
             </div>
         </div >
