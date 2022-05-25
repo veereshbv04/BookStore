@@ -17,9 +17,9 @@ export default function Card({ product }) {
                     <span className="price highlight"><strong>{original}  </strong></span>
                     <span>{rating}</span>
                 </div>
-                <button className="btn btn-primary"><a href="/pages/cart.html">Move to Cart</a></button>
+                <button className="btn btn-primary"><a href="/pages/cart.html">Add to Cart</a></button>
                 <br />
-                <button className="btn btn-primary"><a href="/pages/cart.html">Move to Cart</a></button>
+                <button className="btn btn-primary"><a href="/pages/cart.html">Add to Wishlist</a></button>
                 <span className="fa fa-heart-o heart w3-xxlarge"></span>
             </div>
         </div >

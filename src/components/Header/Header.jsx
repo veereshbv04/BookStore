@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
+
 export default function Header() {
     return (
         <header>
             <nav className="navbar">
-                <a href="/pages/home.html"><div className="navbar-title">BookStore</div></a>
+                <Link to="/"><div className="navbar-title">BookStore</div></Link>
+
 
                 {/* <div >
                     <ul className="navbar-catagory">

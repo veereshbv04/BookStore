@@ -10,7 +10,8 @@ export default function LandingPage() {
 
                 <div className="offer">
                     <h2 className="subheading">Best Selling Books UPTO 60% OFF</h2>
-                    <button className="btn btn-primary"><a href="/pages/productlist.html">Shop Now</a></button>
+                    <Link to="/products"><button className="btn btn-primary">Shop Now</button></Link>
+
                 </div>
 
                 <img src={process.env.PUBLIC_URL + 'assets/Homepagebig.webp'} />
@@ -20,7 +21,7 @@ export default function LandingPage() {
             <section className="container">
                 <div className="offer">
                     <h2 className="subheading">Wide Range of Self Help Books upto 90% Off </h2>
-                    <button className="btn btn-primary"><a href="/pages/productlist.html">Select Now</a></button>
+                    <Link to="/products"><button className="btn btn-primary">Shop Now</button></Link>
                 </div>
 
                 <div className="card card-vertical">
@@ -72,7 +73,7 @@ export default function LandingPage() {
                 </div>
                 <div className="offer">
                     <h2 className="subheading">Best Selling Books UPTO 60% OFF</h2>
-                    <button className="btn btn-primary"><a href="/pages/productlist.html">Shop Now</a></button>
+                    <Link to="/products"><button className="btn btn-primary">Shop Now</button></Link>
                 </div>
                 <div className="card card-horizontal">
                     <img className="img-horizontal" src="/assets/doepicshit.jpg" alt="sample image" />
