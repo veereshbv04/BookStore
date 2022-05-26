@@ -12,9 +12,29 @@ const CartProvider = ({children})=>{
         cartFinalPrice:0
     } 
 
-    const [state, Dispatch] = useReducer(cartReducer, initialCartState)
+    const [state, dispatch] = useReducer(cartReducer, initialCartState)
 
-    return <CartContext.Provider value={}>{children}</CartContext.Provider>
+   async function getCart(){
+
+    }
+
+    async function addToCart(){
+        
+    }
+
+    async function deleteFromCart(){
+
+    }
+
+    async function incrementCart(){
+
+    }
+
+    async function decrementCart(){
+
+    }
+
+    return <CartContext.Provider value={{cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice, addToCart, deleteFromCart, incrementCart, decrementCart}}>{children}</CartContext.Provider>
 }
 
 const useCart = ()=>{
@@ -26,3 +46,5 @@ const useCart = ()=>{
     }
 }
 
+
+export {CartProvider, useCart}

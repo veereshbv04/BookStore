@@ -23,9 +23,10 @@ export default function Header() {
                     {/* <a href="/pages/wishlist.html"><span className="fa fa-heart"></span></a>
                     <div className="badge-icon">2</div>
                     <a href="/pages/cart.html"><span className="fa fa-shopping-cart"></span></a> */}
-                    <span>wish</span>
+
+                    <Link to="/wishlist"><span>wish</span></Link>
                     {" "}
-                    <span>cart</span>
+                    <Link to="/cart"><span>cart</span></Link>
                 </div>
                 <button className="btn btn-primary"><a href="/index.html">Login</a></button>
 
