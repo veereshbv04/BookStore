@@ -27,8 +27,11 @@ export default function Header() {
                     <Link to="/wishlist"><span>wish</span></Link>
                     {" "}
                     <Link to="/cart"><span>cart</span></Link>
+
                 </div>
-                <button className="btn btn-primary"><a href="/index.html">Login</a></button>
+                
+                <button className="btn btn-primary"><Link to="/login">Login</Link></button>
+                <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button>
 
             </nav>
         </header>
