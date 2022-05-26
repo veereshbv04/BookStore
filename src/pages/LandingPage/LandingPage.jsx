@@ -25,7 +25,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="card card-vertical">
-                    <img className="img-vertical" src="/assets/doepicshit.jpg" alt="sample image" />
+                    <img className="img-vertical" src={process.env.PUBLIC_URL + "/assets/book-images/doepicshit.jpg"} alt="sample image" />
                     <span className="card-badge">New</span>
                     <div className="card-content">
 
@@ -38,7 +38,7 @@ export default function LandingPage() {
 
                 <div className="card card-vertical">
 
-                    <img className="img-vertical" src="/assets/doepicshit.jpg" alt="sample image" />
+                    <img className="img-vertical" src={process.env.PUBLIC_URL + "/assets/book-images/doepicshit.jpg"} alt="sample image" />
                     <div className="card-content">
 
                         <h3 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h3>
@@ -49,7 +49,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="card card-vertical">
-                    <img className="img-vertical" src="/assets/doepicshit.jpg" alt="sample image" />
+                    <img className="img-vertical" src={process.env.PUBLIC_URL + "/assets/book-images/doepicshit.jpg"} alt="sample image" />
                     <div className="card-content">
 
                         <h3 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h3>
@@ -62,7 +62,7 @@ export default function LandingPage() {
 
             <section className="container">
                 <div className="card card-horizontal">
-                    <img className="img-horizontal" src="/assets/doepicshit.jpg" alt="sample image" />
+                    <img className="img-horizontal" src={process.env.PUBLIC_URL + "/assets/book-images/doepicshit.jpg"} alt="sample image" />
                     <div className="card-content">
 
                         <h3 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h3>
@@ -76,7 +76,7 @@ export default function LandingPage() {
                     <Link to="/products"><button className="btn btn-primary">Shop Now</button></Link>
                 </div>
                 <div className="card card-horizontal">
-                    <img className="img-horizontal" src="/assets/doepicshit.jpg" alt="sample image" />
+                    <img className="img-horizontal" src={process.env.PUBLIC_URL + "/assets/book-images/doepicshit.jpg"} alt="sample image" />
                     <div className="card-content">
 
                         <h3 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h3>

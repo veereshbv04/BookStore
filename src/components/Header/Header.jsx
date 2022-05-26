@@ -20,9 +20,12 @@ export default function Header() {
                     <input className="navbar-search" placeholder="search here" />
                 </div>
                 <div className="icons">
-                    <a href="/pages/wishlist.html"><span className="fa fa-heart"></span></a>
+                    {/* <a href="/pages/wishlist.html"><span className="fa fa-heart"></span></a>
                     <div className="badge-icon">2</div>
-                    <a href="/pages/cart.html"><span className="fa fa-shopping-cart"></span></a>
+                    <a href="/pages/cart.html"><span className="fa fa-shopping-cart"></span></a> */}
+                    <span>wish</span>
+                    {" "}
+                    <span>cart</span>
                 </div>
                 <button className="btn btn-primary"><a href="/index.html">Login</a></button>
 
