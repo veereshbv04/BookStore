@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import axios from "axios";
 
 export default function SignUp() {
 
@@ -17,8 +18,23 @@ export default function SignUp() {
         setNewUserData(prev => ({...prev, [name]:value}))
     }
 
-    function sendNewUserData(data){
-        
+    async function sendNewUserData(data){
+        console.log("in senduserdata")
+        if(data.password === data.confirmPassword){
+          console.log(data)
+            try{
+                const response = await axios.post("/api/auth/signup", data)
+                if (response.status === 201) {
+                    const { data } = response;
+                    const userToken = data.encodedToken
+                    console.log(userToken)
+                    localStorage.setItem("userToken", userToken)
+                    navigate("/products")
+                }
+            }catch(error){
+                console.log(error.response)
+            }
+        }
     }
 
     function signUpHandler(e){
