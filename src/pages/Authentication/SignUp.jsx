@@ -7,7 +7,7 @@ export default function SignUp() {
     const [newUserData, setNewUserData] = useState({
         firstName:"",
         lastName:"",
-        emailId:"",
+        email:"",
         password:"",
         confirmPassword:""
     })
@@ -20,16 +20,20 @@ export default function SignUp() {
 
     async function sendNewUserData(data){
         console.log("in senduserdata")
+        console.log(data)
         if(data.password === data.confirmPassword){
-          console.log(data)
+          
             try{
                 const response = await axios.post("/api/auth/signup", data)
+                console.log(response)
                 if (response.status === 201) {
+                    console.log("hello 201 code")
+                    // ERROR NEED TO FIX HERE, GETTING 500 STATUS CODE
                     const { data } = response;
-                    const userToken = data.encodedToken
-                    console.log(userToken)
-                    localStorage.setItem("userToken", userToken)
-                    navigate("/products")
+                    // const userToken = data.encodedToken
+                    // console.log(userToken)
+                    // localStorage.setItem("userToken", userToken)
+                    // navigate("/products")
                 }
             }catch(error){
                 console.log(error.response)
@@ -49,7 +53,7 @@ export default function SignUp() {
                 <h2 className="subheading">Create Account</h2>
                 <input className="input" placeholder="Enter First Name" type="text" name="firstName" required onChange={userInputHandler} />
                 <input className="input" placeholder="Enter Last Name" type="text" name="lastName" required onChange={userInputHandler}/>
-                <input className="input" placeholder="Enter Email Id" type="email" name="emailId" required onChange={userInputHandler}/>
+                <input className="input" placeholder="Enter Email Id" type="email" name="email" required onChange={userInputHandler}/>
                 <input className="input" placeholder="Create Password" type="password" name="password" required onChange={userInputHandler}/>
                 <input className="input" placeholder="ConfirmPassword" type="password" name="confirmPassword" required onChange={userInputHandler}/>
                 <button className="btn btn-primary" onClick={signUpHandler}>Sign Up</button>
