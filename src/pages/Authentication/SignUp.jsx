@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
 
 export default function SignUp() {
-
+    const navigate = useNavigate()
     const [newUserData, setNewUserData] = useState({
         firstName:"",
         lastName:"",
@@ -19,25 +19,19 @@ export default function SignUp() {
     }
 
     async function sendNewUserData(data){
-        console.log("in senduserdata")
-        console.log(data)
         if(data.password === data.confirmPassword){
-          
             try{
-                const response = await axios.post("/api/auth/signup", data)
-                console.log(response)
+                const response = await axios.post("api/auth/signup", data)
                 if (response.status === 201) {
-                    console.log("hello 201 code")
-                    // ERROR NEED TO FIX HERE, GETTING 500 STATUS CODE
-                    const { data } = response;
-                    // const userToken = data.encodedToken
-                    // console.log(userToken)
-                    // localStorage.setItem("userToken", userToken)
-                    // navigate("/products")
+                    const encodedToken = response.data.encodedToken
+                    localStorage.setItem("encodedToken", encodedToken)
+                    navigate("/products")
                 }
             }catch(error){
-                console.log(error.response)
+                console.log(error)
             }
+        }else{
+            console.log("Password should match")
         }
     }
 

@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
 
 export default function Login() {
-
+    const navigate = useNavigate()
     const [userData, setUserData] = useState({email:"", password:""})
 
     function userInputHandler(event) {
         const { name, value } = event.target;
-
         setUserData(prev => ({ ...prev, [name]: value }))
     }
 
@@ -17,12 +16,22 @@ export default function Login() {
         sendUserData(userData)
     }
 
-    async function sendUserData(data){
+    async function sendUserData(data) {
         console.log("I am in senduserdata")
         console.log(data)
-        const response = await axios.get("/api/auth/login", data)
-        console.log(response)
+        try{
+            const response = await axios.post("/api/auth/login", data)
+            if (response.status === 200) {
+                const encodedToken = response.data.encodedToken
+                localStorage.setItem("encodedToken", encodedToken)
+                navigate("/products")
+            } 
+        }catch(error){
+            console.log(error)
+        }
+        
     }
+
 
     return (
 
