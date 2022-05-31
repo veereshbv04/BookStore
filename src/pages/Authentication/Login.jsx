@@ -1,18 +1,49 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react"
+import axios from "axios";
 
 export default function Login() {
+    const navigate = useNavigate()
+    const [userData, setUserData] = useState({email:"", password:""})
+
+    function userInputHandler(event) {
+        const { name, value } = event.target;
+        setUserData(prev => ({ ...prev, [name]: value }))
+    }
+
+    function loginHandler(event)
+    {   event.preventDefault()
+        sendUserData(userData)
+    }
+
+    async function sendUserData(data) {
+        console.log("I am in senduserdata")
+        console.log(data)
+        try{
+            const response = await axios.post("/api/auth/login", data)
+            if (response.status === 200) {
+                const encodedToken = response.data.encodedToken
+                localStorage.setItem("encodedToken", encodedToken)
+                navigate("/products")
+            } 
+        }catch(error){
+            console.log(error)
+        }
+        
+    }
+
+
     return (
 
         <div className="center-div">
             <form className="form">
-                <h2 class="subheading">Login In</h2>
-                <input className="input" placeholder="Enter Email Id" type="email" />
-                <input className="input" placeholder="Enter Password" type="password" />
+                <h2 className="subheading">Login In</h2>
+                <input className="input" placeholder="Enter Email Id" onChange={userInputHandler} name="email" required type="email" />
+                <input className="input" placeholder="Enter Password" onChange={userInputHandler} name="password" required type="password" />
 
-                {/* <Link to="/login"><small class="error-message green"> Don't have an acoount ?</small></Link> */}
                 
                 <Link to="/signup"><small className="error-message green">Don't have an acoount ?</small></Link>
-                <Link to="/"><button class="btn btn-primary">Sign Up</button></Link>
+                <Link to="/"><button className="btn btn-primary" type="submit" onClick={loginHandler}>Sign Up</button></Link>
             </form>
 
         </div>
