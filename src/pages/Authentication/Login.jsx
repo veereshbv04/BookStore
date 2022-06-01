@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
+import { useAuth } from "../../contexts/auth-context";
 
 export default function Login() {
     const navigate = useNavigate()
     const [userData, setUserData] = useState({email:"", password:""})
+    const {setIsLogged} = useAuth()
 
     function userInputHandler(event) {
         const { name, value } = event.target;
@@ -24,10 +26,12 @@ export default function Login() {
             if (response.status === 200) {
                 const encodedToken = response.data.encodedToken
                 localStorage.setItem("encodedToken", encodedToken)
+                setIsLogged(true)
                 navigate("/products")
             } 
         }catch(error){
             console.log(error)
+            alert(error)
         }
         
     }

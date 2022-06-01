@@ -1,10 +1,14 @@
+import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { cartReducer } from "../reducer/cartReducer";
-
+import { useAuth } from "./auth-context";
 const CartContext = createContext()
 
 const CartProvider = ({children})=>{    
-
+    const navigate = useNavigate()
+    const {isLogged} = useAuth()
+    const encodeToken = localStorage.getItem("encodeToken")
     const initialCartState = {
         cart:[],
         cartCount:0,
@@ -15,7 +19,16 @@ const CartProvider = ({children})=>{
     const [state, dispatch] = useReducer(cartReducer, initialCartState)
 
    async function getCart(){
-
+        try{
+            const response = axios.get("/api/user/cart", {
+                headers:{
+                    authorization :encodeToken
+                }
+            })
+            console.log(response)
+        }catch(error){
+            console.log(error)
+        }
     }
 
     async function addToCart(){
@@ -34,7 +47,12 @@ const CartProvider = ({children})=>{
 
     }
 
-    return <CartContext.Provider value={{cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice, addToCart, deleteFromCart, incrementCart, decrementCart}}>{children}</CartContext.Provider>
+    return (
+    <CartContext.Provider value={{cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice, addToCart, deleteFromCart, incrementCart, decrementCart}}>
+
+        {children}
+
+    </CartContext.Provider>)
 }
 
 const useCart = ()=>{

@@ -19,7 +19,7 @@ const AuthProvider = ({children})=>{
         setIsLogged(false)
         localStorage.removeItem("token")
         navigate("/")
-        
+    
     }
 
     return <AuthContext.Provider value={{isLogged, setIsLogged, logoutHandler}}>{children}</AuthContext.Provider>
