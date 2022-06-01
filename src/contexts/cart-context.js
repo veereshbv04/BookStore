@@ -32,6 +32,7 @@ const CartProvider = ({children})=>{
             
             if(state.cart.some(product => product._id === product._id)){
                 incrementCart(product)
+                console.log("product-id", product._id)
             }else{
                 try{
                     const response = await axios.post("/api/user/cart", {
@@ -65,7 +66,7 @@ const CartProvider = ({children})=>{
 
     }
 
-    async function incrementCart(){
+    async function incrementCart(product){
         if(isLogged){
             try{
                 const response = await axios.post(`api/user/cart/${product._id}`,{
@@ -77,6 +78,7 @@ const CartProvider = ({children})=>{
                 })
                 console.log("I am in incrementCart")
                 if(response.status === 200){
+                    console.log(response.data.cart)
                     dispatch({type:"INCREMENT_CART", payload:response.data.cart})
                 }
             }catch(error){
