@@ -45,18 +45,20 @@ const CartProvider = ({children})=>{
                     const response = await axios.post("/api/user/cart", {
                         product
                     }, {
-                        headers: {
-                            authorization: encodedToken
-                        }
+                         headers: {
+                             authorization: encodedToken
+                         }
                     })
-                    if (response.state === 201) {
+                    if (response.status === 201) {
+                        
                         dispatch({
                             type: "ADD_TO_CART",
                             payload: response.data.cart
                         })
+                        console.log("cart dispatch made")
                     }
                 }catch(error){
-                    console.log(err)
+                    console.log(error)
                 }
                
             }
@@ -72,16 +74,31 @@ const CartProvider = ({children})=>{
 
     async function incrementCart(){
         if(isLogged){
-            
+            try{
+                const response = await axios.post(`api/user/cart/${product._id}`,{
+                    action:{type:"decrement"}
+                },{
+                    headers:{
+                        authorization:encodedToken
+                    }
+                })
+                console.log("I am in incrementCart")
+                if(response.status === 200){
+                    dispatch({type:"INCREMENT_CART", payload:response.data.cart})
+                }
+            }catch(error){
+                console.log(error)
+                alert(error)
+            }
         }
     }
 
     async function decrementCart(){
-
+        
     }
-
+//cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice,
     return (
-    <CartContext.Provider value={{cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice, addToCart, deleteFromCart, incrementCart, decrementCart}}>
+    <CartContext.Provider value={{...state, addToCart, deleteFromCart, incrementCart, decrementCart}}>
 
         {children}
 

@@ -48,6 +48,7 @@ export default function Login() {
                 
                 <Link to="/signup"><small className="error-message green">Don't have an acoount ?</small></Link>
                 <Link to="/"><button className="btn btn-primary" type="submit" onClick={loginHandler}>Sign Up</button></Link>
+                <button onClick={() => sendUserData({ email: 'adarshbalika@gmail.com', password: 'adarshbalika'})}>Guest login</button>
             </form>
 
         </div>
