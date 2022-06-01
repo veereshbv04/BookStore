@@ -1,8 +1,9 @@
 // import { doepicshit } from "../../../public/assets/book-images"
 import { Link } from "react-router-dom"
+import { useCart } from "../../contexts/cart-context"
 import "./Card.css"
 export default function Card({ product }) {
-
+    const {addToCart} = useCart()
     const { productImage, title, author, price: { original, discounted, discount }, rating } = product
 
     return (
@@ -19,9 +20,9 @@ export default function Card({ product }) {
                     <span>{rating}</span>
                 </div>
 
-                <button className="btn btn-primary"><Link to="/cart">Add to Cart</Link></button>
+                <button className="btn btn-primary"><a to="/cart" onClick={()=>addToCart(product)}>Add to Cart</a></button>
                 <br />
-                <button className="btn btn-primary"><Link to="/wishlist">Add to Wishlist</Link></button>
+                <button className="btn btn-primary"><a to="/wishlist">Add to Wishlist</a></button>
                 <span className="fa fa-heart-o heart w3-xxlarge"></span>
             </div>
         </div >

@@ -31,7 +31,8 @@ const CartProvider = ({children})=>{
         }
     }
 
-    async function addToCart(){
+    async function addToCart(product){
+        console.log("I am in addtocart in cart-context.js", product)
         
     }
 

@@ -89,7 +89,7 @@ export default function ProductFilter() {
             <div className="category">
                 <h4 className="highlight">Sort by</h4>
 
-                <label for="radio-input-1">
+                <label htmlFor="radio-input-1">
                     <input
                         type="radio"
                         id="radio-input-1"
@@ -100,7 +100,7 @@ export default function ProductFilter() {
                     />
                     <span>Price - Low to high</span>
                 </label>
-                <label for="radio-input-2">
+                <label htmlFor="radio-input-2">
                     <input
                         type="radio"
                         id="radio-input-2"
