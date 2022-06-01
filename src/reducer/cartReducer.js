@@ -1,14 +1,7 @@
-function cartReducer({
-    cart,
-    cartCount,
-    cartTotalPrice,
-    cartFinalPrice,
-
-    type,
-    payload}) {
+function cartReducer(state, {type, payload}){
     console.log("cartreduecr here")
     
-    
+    return state
     
 }
 

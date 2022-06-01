@@ -41,8 +41,9 @@ const CartProvider = ({children})=>{
                              authorization: encodedToken
                          }
                     })
+                    
                     if (response.status === 201) {
-                        
+                        console.log(response)
                         dispatch({
                             type: "ADD_TO_CART",
                             payload: response.data.cart
