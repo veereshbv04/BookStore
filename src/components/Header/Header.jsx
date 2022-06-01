@@ -34,8 +34,8 @@ export default function Header() {
                 </div>
                 {console.log("from header",isLogged)}
 
-                {isLogged?<Link to="/" onClick={logoutHandler}><button className="btn btn-primary">Logout</button></Link>:<span><button className="btn btn-primary"><Link to="/login">Login</Link></button>
-                    <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button></span>
+                {isLogged?<Link to="/" onClick={logoutHandler}><button className="btn btn-primary">Logout</button></Link>:<div><button className="btn btn-primary"><Link to="/login">Login</Link></button>
+                    <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button></div>
 }
             </nav>
         </header>
