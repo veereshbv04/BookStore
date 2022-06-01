@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext,  useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { cartReducer } from "../reducer/cartReducer";
 import { useAuth } from "./auth-context";
@@ -19,17 +19,9 @@ const CartProvider = ({children})=>{
 
     const [state, dispatch] = useReducer(cartReducer, initialCartState)
     console.log(state)
+    console.log(cartReducer)
    async function getCart(){
-        try{
-            const response = axios.get("/api/user/cart", {
-                headers:{
-                    authorization :encodedToken
-                }
-            })
-            console.log(response)
-        }catch(error){
-            console.log(error)
-        }
+        
     }
 
     async function addToCart(product){
