@@ -8,7 +8,8 @@ const CartContext = createContext()
 const CartProvider = ({children})=>{    
     const navigate = useNavigate()
     const {isLogged} = useAuth()
-    const encodeToken = localStorage.getItem("encodeToken")
+    const encodedToken = localStorage.getItem("encodedToken")
+    console.log(encodedToken)
     const initialCartState = {
         cart:[],
         cartCount:0,
@@ -22,7 +23,7 @@ const CartProvider = ({children})=>{
         try{
             const response = axios.get("/api/user/cart", {
                 headers:{
-                    authorization :encodeToken
+                    authorization :encodedToken
                 }
             })
             console.log(response)
@@ -32,7 +33,36 @@ const CartProvider = ({children})=>{
     }
 
     async function addToCart(product){
-        console.log("I am in addtocart in cart-context.js", product)
+    
+        console.log("I am in addToCart>encodedtoken", encodedToken)
+
+        if(isLogged){
+            
+            if(state.cart.some(product => product._id === product._id)){
+                incrementCart(product)
+            }else{
+                try{
+                    const response = await axios.post("/api/user/cart", {
+                        product
+                    }, {
+                        headers: {
+                            authorization: encodedToken
+                        }
+                    })
+                    if (response.state === 201) {
+                        dispatch({
+                            type: "ADD_TO_CART",
+                            payload: response.data.cart
+                        })
+                    }
+                }catch(error){
+                    console.log(err)
+                }
+               
+            }
+        }else{
+            navigate("/login")
+        }
         
     }
 
@@ -41,7 +71,9 @@ const CartProvider = ({children})=>{
     }
 
     async function incrementCart(){
-
+        if(isLogged){
+            
+        }
     }
 
     async function decrementCart(){
