@@ -18,7 +18,7 @@ const CartProvider = ({children})=>{
     } 
 
     const [state, dispatch] = useReducer(cartReducer, initialCartState)
-
+    console.log(state)
    async function getCart(){
         try{
             const response = axios.get("/api/user/cart", {
