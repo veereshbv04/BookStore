@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../../contexts/auth-context"
 
 export default function Header() {
+    const {isLogged, logoutHandler} = useAuth()
+
     return (
         <header>
             <nav className="navbar">
@@ -29,10 +32,11 @@ export default function Header() {
                     <Link to="/cart"><span>cart</span></Link>
 
                 </div>
-                
-                <button className="btn btn-primary"><Link to="/login">Login</Link></button>
-                <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button>
+                {console.log("from header",isLogged)}
 
+                {isLogged?<Link to="/" onClick={logoutHandler}><button className="btn btn-primary">Logout</button></Link>:<span><button className="btn btn-primary"><Link to="/login">Login</Link></button>
+                    <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button></span>
+}
             </nav>
         </header>
     )
