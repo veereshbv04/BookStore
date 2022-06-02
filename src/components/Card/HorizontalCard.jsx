@@ -13,7 +13,7 @@ export default function HorizontalCard({cartItem}){
                 <small>{categoryName}</small>
                 <h3 className="price">{discounted}<small className="offer-saving strike">₹500</small></h3>
                 <span className="offer-saving">40% Offer</span>
-
+<s>{discount}</s>
                 <div className="quantity">
                     <span className="plus" onClick={()=>incrementCart(cartItem)}>+</span>
                     <input type="number" value={qty} />
