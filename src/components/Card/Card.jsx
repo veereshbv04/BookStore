@@ -1,9 +1,12 @@
 // import { doepicshit } from "../../../public/assets/book-images"
 import { Link } from "react-router-dom"
 import { useCart } from "../../contexts/cart-context"
+import { useWishlist } from "../../contexts/wishlist-context"
+
 import "./Card.css"
 export default function Card({ product }) {
     const {cart, addToCart, removeFromCart} = useCart()
+    const {addToWishlist} = useWishlist()
     const { _id, productImage, title, author, price: { original, discounted, discount }, rating } = product
     console.log("I am from card.jsx, cart", cart)
     return (
@@ -26,7 +29,7 @@ export default function Card({ product }) {
                 <br /> */}
                 <br />
                 <button className="btn btn-primary"><a to="/wishlist">Add to Wishlist</a></button>
-                <span className="fa fa-heart-o heart w3-xxlarge"></span>
+                <span className="fa fa-heart-o heart w3-xxlarge" onClick={()=>addToWishlist(product)}>j</span>
             </div>
         </div >
 
