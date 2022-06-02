@@ -15,6 +15,8 @@ function cartReducer(state, {type, payload}){
     switch (type) {
         case "ADD_TO_CART":
         case "INCREMENT_CART":
+        case "REMOVE_FROM_CART":
+        case "DECREMENT_CART":
             
             return {...state,
             cart:payload,

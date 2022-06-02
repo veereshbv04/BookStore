@@ -63,8 +63,41 @@ const CartProvider = ({children})=>{
         
     }
 
-    async function deleteFromCart(){
+    async function removeFromCart(){
+        console.log("I am in removeToCart")
 
+        if (isLogged) {
+
+            if (state.cart.some(item => item._id === product._id)) {
+
+                incrementCart(product)
+                console.log("product-id", product._id)
+            } else {
+                try {
+                    const response = await axios.delete("/api/user/cart", {
+                        product
+                    }, {
+                        headers: {
+                            authorization: encodedToken
+                        }
+                    })
+
+                    if (response.status === 201) {
+                        console.log(response)
+                        dispatch({
+                            type: "REMOVE_FROM_CART",
+                            payload: response.data.cart
+                        })
+                        console.log("cart dispatch made")
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+
+            }
+        } else {
+            navigate("/login")
+        }
     }
 
     async function incrementCart(product){
@@ -80,6 +113,7 @@ const CartProvider = ({children})=>{
                 console.log("I am in incrementCart")
                 if(response.status === 200){
                     console.log(response.data.cart)
+                    //cart from response contains updated cart no need to worry about anything
                     dispatch({type:"INCREMENT_CART", payload:response.data.cart})
                 }
             }catch(error){
@@ -90,11 +124,35 @@ const CartProvider = ({children})=>{
     }
 
     async function decrementCart(){
-        
+        if (isLogged) {
+            try {
+                const response = await axios.post(`api/user/cart/${product._id}`, {
+                    action: {
+                        type: "decrement"
+                    }
+                }, {
+                    headers: {
+                        authorization: encodedToken
+                    }
+                })
+                console.log("I am in incrementCart")
+                if (response.status === 200) {
+                    console.log(response.data.cart)
+                    //cart from response contains updated cart no need to worry about anything
+                    dispatch({
+                        type: "DECREMENT_CART",
+                        payload: response.data.cart
+                    })
+                }
+            } catch (error) {
+                console.log(error)
+                alert(error)
+            }
+        }
     }
 //cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice,
     return (
-    <CartContext.Provider value={{...state, addToCart, deleteFromCart, incrementCart, decrementCart}}>
+    <CartContext.Provider value={{...state, addToCart, removeFromCart, incrementCart, decrementCart}}>
 
         {children}
 

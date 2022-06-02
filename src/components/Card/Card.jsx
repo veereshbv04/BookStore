@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import { useCart } from "../../contexts/cart-context"
 import "./Card.css"
 export default function Card({ product }) {
-    const {addToCart} = useCart()
-    const { productImage, title, author, price: { original, discounted, discount }, rating } = product
-
+    const {cart, addToCart, removeFromCart} = useCart()
+    const { _id, productImage, title, author, price: { original, discounted, discount }, rating } = product
+    console.log("I am from card.jsx, cart", cart)
     return (
 
         <div className="card card-vertical">
@@ -19,8 +19,11 @@ export default function Card({ product }) {
                     <span className="price highlight"><strong>{original}  </strong></span>
                     <span>{rating}</span>
                 </div>
-
-                <button className="btn btn-primary"><a to="/cart" onClick={()=>addToCart(product)}>Add to Cart</a></button>
+                {
+                    cart.find(item => item._id === _id) ? <button className="btn btn-primary"><Link to="/cart">Go to Cart</Link></button> : <button className="btn btn-primary"><a to="/cart" onClick={() => addToCart(product)}>Add to Cart</a></button>
+                }
+                {/* <button className="btn btn-primary"><a to="/cart" onClick={()=>addToCart(product)}>Add to Cart</a></button>
+                <br /> */}
                 <br />
                 <button className="btn btn-primary"><a to="/wishlist">Add to Wishlist</a></button>
                 <span className="fa fa-heart-o heart w3-xxlarge"></span>

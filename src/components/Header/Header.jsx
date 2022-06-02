@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../../contexts/auth-context"
-
+import { useCart } from "../../contexts/cart-context"
 export default function Header() {
+
+    const {cartCount} = useCart()
+
     const {isLogged, logoutHandler} = useAuth()
 
     return (
@@ -29,7 +32,7 @@ export default function Header() {
 
                     <Link to="/wishlist"><span>wish</span></Link>
                     {" "}
-                    <Link to="/cart"><span>cart</span></Link>
+                    <Link to="/cart"><span>cart{cartCount}</span></Link>
 
                 </div>
                 {console.log("from header",isLogged)}
