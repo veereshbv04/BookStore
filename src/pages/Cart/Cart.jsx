@@ -1,39 +1,14 @@
+import { HorizontalCard } from "../../components"
+import { useCart } from "../../contexts/cart-context"
 export default function Cart() {
+    const {cart} = useCart()
+console.log("from cartjsx",cart)
     return (
         <section className="container center-div">
-            <div className="card card-horizontal shadow">
-                <img className="img-horizontal" src="/assets/doepicshit.jpg" alt="sample image" />
-                    <div className="card-content">
-
-                        <h2 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h2>
-                        <small>Sapna Publication</small>
-                        <h3 className="price">₹299 <small className="offer-saving strike">₹500</small></h3>
-                        <span className="offer-saving">40% Offer</span>
-
-                        <div className="quantity">
-                            <span className="plus">+</span>
-                            <input type="number" />
-                                <span className="minus">-</span>
-                        </div>
-                    </div>
-            </div>
-
-            <div className="card card-horizontal shadow">
-                <img className="img-horizontal" src="/assets/doepicshit.jpg" alt="sample image" />
-                    <div className="card-content">
-
-                        <h2 className="card-title">Do Epic Shit(paperback) by Ankur warikko</h2>
-                        <small>Sapna Publication</small>
-                        <h3 className="price">₹299 <small className="offer-saving strike">₹500</small></h3>
-                        <span className="offer-saving">40% Offer</span>
-
-                        <div className="quantity">
-                            <span className="plus">+</span>
-                            <input type="number" />
-                                <span className="minus">-</span>
-                        </div>
-                    </div>
-            </div>
+            {cart.map(cartItem =>(
+                <HorizontalCard cartItem={cartItem} key={cartItem._id}/>
+            ))}
+            
             
             
             <div className="card card-vertical shadow">

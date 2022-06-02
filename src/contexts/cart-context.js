@@ -123,7 +123,7 @@ const CartProvider = ({children})=>{
         }
     }
 
-    async function decrementCart(){
+    async function decrementCart(product){
         if (isLogged) {
             try {
                 const response = await axios.post(`api/user/cart/${product._id}`, {
