@@ -9,7 +9,7 @@ const CartProvider = ({children})=>{
     const navigate = useNavigate()
     const {isLogged} = useAuth()
     const encodedToken = localStorage.getItem("encodedToken")
-    console.log(encodedToken)
+    
     const initialCartState = {
         cart:[],
         cartCount:0,
@@ -18,19 +18,20 @@ const CartProvider = ({children})=>{
     } 
 
     const [state, dispatch] = useReducer(cartReducer, initialCartState)
-    console.log(state)
-    console.log(cartReducer)
+    
+    
    async function getCart(){
         
     }
 
     async function addToCart(product){
     
-        console.log("I am in addToCart>encodedtoken", encodedToken)
+        console.log("I am in addToCart")
 
         if(isLogged){
             
-            if(state.cart.some(product => product._id === product._id)){
+            if(state.cart.some(item => item._id === product._id)){
+                
                 incrementCart(product)
                 console.log("product-id", product._id)
             }else{
@@ -70,7 +71,7 @@ const CartProvider = ({children})=>{
         if(isLogged){
             try{
                 const response = await axios.post(`api/user/cart/${product._id}`,{
-                    action:{type:"decrement"}
+                    action:{type:"increment"}
                 },{
                     headers:{
                         authorization:encodedToken

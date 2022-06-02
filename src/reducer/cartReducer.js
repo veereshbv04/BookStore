@@ -1,21 +1,35 @@
 function cartReducer(state, {type, payload}){
-    console.log("cartreduecr here")
-    
+    console.log("cartreduecr here, payload", payload)
+    console.log(state)
+    //abstracting reducer functions
+    // need to add discount prices
+    function cartCountReduce(acc, curr){
+        return acc+=curr.qty
+    }
+    function cartTotalPriceReduce(acc, curr){
+        return acc += curr.price.original * curr.qty
+    }
+    function cartFinalPriceReduce(acc, curr){
+        return acc += curr.price.discounted * curr.qty
+    }
     switch (type) {
         case "ADD_TO_CART":
+        case "INCREMENT_CART":
+            
             return {...state,
             cart:payload,
-            cartCount:payload.length,
-            cartTotalPrice: payload.reduce((acc, curr) => (acc += curr.price.original * curr.qty), 0),
-            cartFinalPrice: payload.reduce((acc, curr) => (acc += curr.price.discounted * curr.qty), 0)
+            cartCount: payload.reduce(cartCountReduce, 0),
+            cartTotalPrice: payload.reduce(cartTotalPriceReduce, 0),
+               
+            cartFinalPrice: payload.reduce(cartFinalPriceReduce, 0)
             }
             
     
         default:
-            break;
+            state
     }
 
-    return state
+    
     
 }
 
