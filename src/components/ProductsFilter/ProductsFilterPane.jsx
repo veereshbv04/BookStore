@@ -1,4 +1,4 @@
-import { useProduct } from "../../contexts/product-context"
+import { useProduct } from "../../contexts"
 export default function ProductFilter() {
     const { state, dispatch } = useProduct();
     const { rating, sortBy } = state;

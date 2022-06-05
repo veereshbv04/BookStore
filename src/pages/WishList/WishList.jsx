@@ -1,5 +1,5 @@
 import { Card } from "../../components"
-import { useWishlist } from "../../contexts/wishlist-context"
+import { useWishlist } from "../../contexts"
 
 
 export default function WishList() {

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
-import { useAuth } from "../../contexts/auth-context"
-import { useCart } from "../../contexts/cart-context"
-import { useWishlist } from "../../contexts/wishlist-context"
+import { useAuth, useCart, useWishlist } from "../../contexts"
 
 export default function Header() {
     const { isLogged, logoutHandler } = useAuth()

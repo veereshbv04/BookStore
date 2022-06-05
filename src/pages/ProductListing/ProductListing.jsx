@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Card, ProductsFilter } from "../../components"
-import { useProduct } from "../../contexts/product-context"
+import { useProduct } from "../../contexts"
 import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFilterUtils"
 export default function ProductListing() {
     const { state } = useProduct()
@@ -21,7 +21,7 @@ export default function ProductListing() {
 
     return (
         <>
-            <h3 className="subheading">Showing all Books</h3>
+            <h3 className="subheading">Showing {FilteredProductList.length} Books</h3>
             <div className="grid grid-2-8">
                 <ProductsFilter />
                 <section className="product-display wrap">
