@@ -43,10 +43,10 @@ const WishlistProvider =({children})=>{
     }
 
     async function removeFromWishlist(product){
-        console.log("i am in removefromwishlist")
+      
         if (isLogged) {
-            try {
-                const response = await axios.delete(`/api/user/wishlist/:${product._id}`, {
+            try {// need not to use "":" in ${product._id}
+                const response = await axios.delete(`/api/user/wishlist/${product._id}`, {
                     headers: {
                         authorization: encodedToken
                     }
@@ -61,7 +61,7 @@ const WishlistProvider =({children})=>{
                     console.log("remove from wishlist dispatch made", response.data.wishlist)
                 }
             } catch (error) {
-                // alert(error)
+                alert(error)
             }
 
 
