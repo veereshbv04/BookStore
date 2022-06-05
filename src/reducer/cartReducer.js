@@ -1,6 +1,4 @@
 function cartReducer(state, {type, payload}){
-    console.log("cartreduecr here, payload", payload)
-    console.log(state)
     //abstracting reducer functions
     // need to add discount prices
     function cartCountReduce(acc, curr){

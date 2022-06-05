@@ -19,8 +19,7 @@ export default function Login() {
     }
 
     async function sendUserData(data) {
-        console.log("I am in senduserdata")
-        console.log(data)
+       
         try{
             const response = await axios.post("/api/auth/login", data)
             if (response.status === 200) {
@@ -30,7 +29,7 @@ export default function Login() {
                 navigate("/products")
             } 
         }catch(error){
-            console.log(error)
+            
             alert(error)
         }
         

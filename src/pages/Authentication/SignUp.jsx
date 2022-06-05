@@ -32,10 +32,10 @@ export default function SignUp() {
                     navigate("/products")
                 }
             }catch(error){
-                console.log(error)
+                alert(error)
             }
         }else{
-            console.log("Password should match")
+            alert("Password should match")
         }
     }
 

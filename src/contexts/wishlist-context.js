@@ -15,7 +15,6 @@ const WishlistProvider =({children})=>{
     }
 
     const [state, dispatch] = useReducer(wishlistReducer, initialState)
-    console.log(state)
     async function addToWishlist(product){
         if(isLogged){
             try{
@@ -29,7 +28,6 @@ const WishlistProvider =({children})=>{
                
                 if(response.status === 201){
                     dispatch({type:"ADD_TO_WISHLIST", payload:response.data.wishlist})
-                    console.log("wishlist dispatch made", response.data.wishlist)
                 }
             }catch(error){
                 alert(error)
@@ -51,14 +49,12 @@ const WishlistProvider =({children})=>{
                         authorization: encodedToken
                     }
                 })
-                console.log("from wishlistcontext", response)
                 if (response.status === 200) {
                     
                     dispatch({
                         type: "REMOVE_FROM_WISHLIST",
                         payload: response.data.wishlist
                     })
-                    console.log("remove from wishlist dispatch made", response.data.wishlist)
                 }
             } catch (error) {
                 alert(error)

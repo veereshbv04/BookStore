@@ -5,10 +5,8 @@ import { useProduct } from "../../contexts/product-context"
 import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFilterUtils"
 export default function ProductListing() {
     const { state } = useProduct()
-    console.log(state)
     const [productsList, setProductsList] = useState([])
     const FilteredProductList = getFilteredProducts(state, productsList)
-    console.log(FilteredProductList)
     useEffect(() =>
         (async function fetchProducts() {
 
@@ -16,7 +14,7 @@ export default function ProductListing() {
                 const responseData = await axios.get("/api/products")
                 setProductsList(responseData.data.products)
             } catch (error) {
-                console.log(error)
+                alert(error)
             }
         })()
         , [])

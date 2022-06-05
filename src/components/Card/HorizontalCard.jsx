@@ -1,7 +1,7 @@
 import { useCart } from "../../contexts/cart-context";
 
 export default function HorizontalCard({cartItem}){
-    console.log("from horizontalcard", cartItem);
+   
     const {incrementCart, decrementCart} = useCart()
     const { title, productImage,price, author, categoryName, qty} = cartItem
     const {original, discounted, discount} = price

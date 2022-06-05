@@ -1,4 +1,3 @@
-// import { doepicshit } from "../../../public/assets/book-images"
 import { Link } from "react-router-dom"
 import { useCart } from "../../contexts/cart-context"
 import { useWishlist } from "../../contexts/wishlist-context"
@@ -8,7 +7,7 @@ export default function Card({ product }) {
     const {cart, addToCart, removeFromCart} = useCart()
     const {wishItems, addToWishlist, removeFromWishlist} = useWishlist()
     const { _id, productImage, title, author, price: { original, discounted, discount }, rating } = product
-    // console.log("I am from card.jsx, cart", cart)
+    
     return (
 
         <div className="card card-vertical">

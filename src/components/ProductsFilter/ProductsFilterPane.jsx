@@ -9,7 +9,7 @@ export default function ProductFilter() {
             <div className="filter highlight">
                 filter
                 <button type="reset" onClick={() => {
-                    console.log("from clear");
+                   
                     dispatch({ type: "CLEAR_ALL" })
                 }}>Reset</button>
                 {/* error while adding this, check bookmarked page */}

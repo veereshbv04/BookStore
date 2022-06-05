@@ -33,7 +33,6 @@ const CartProvider = ({children})=>{
             if(state.cart.some(item => item._id === product._id)){
                 
                 incrementCart(product)
-                console.log("product-id", product._id)
             }else{
                 try{
                     const response = await axios.post("/api/user/cart", {
@@ -45,15 +44,13 @@ const CartProvider = ({children})=>{
                     })
                     
                     if (response.status === 201) {
-                        console.log(response)
                         dispatch({
                             type: "ADD_TO_CART",
                             payload: response.data.cart
                         })
-                        console.log("cart dispatch made")
                     }
                 }catch(error){
-                    console.log(error)
+                    alert(error)
                 }
                
             }
@@ -64,14 +61,12 @@ const CartProvider = ({children})=>{
     }
 
     async function removeFromCart(){
-        console.log("I am in removeToCart")
 
         if (isLogged) {
 
             if (state.cart.some(item => item._id === product._id)) {
 
                 incrementCart(product)
-                console.log("product-id", product._id)
             } else {
                 try {
                     const response = await axios.delete("/api/user/cart", {
@@ -83,15 +78,13 @@ const CartProvider = ({children})=>{
                     })
 
                     if (response.status === 201) {
-                        console.log(response)
                         dispatch({
                             type: "REMOVE_FROM_CART",
                             payload: response.data.cart
                         })
-                        console.log("cart dispatch made")
                     }
                 } catch (error) {
-                    console.log(error)
+                    alert(error)
                 }
 
             }
@@ -110,14 +103,11 @@ const CartProvider = ({children})=>{
                         authorization:encodedToken
                     }
                 })
-                console.log("I am in incrementCart")
                 if(response.status === 200){
-                    console.log(response.data.cart)
                     //cart from response contains updated cart no need to worry about anything
                     dispatch({type:"INCREMENT_CART", payload:response.data.cart})
                 }
             }catch(error){
-                console.log(error)
                 alert(error)
             }
         }
@@ -135,9 +125,7 @@ const CartProvider = ({children})=>{
                         authorization: encodedToken
                     }
                 })
-                console.log("I am in incrementCart")
                 if (response.status === 200) {
-                    console.log(response.data.cart)
                     //cart from response contains updated cart no need to worry about anything
                     dispatch({
                         type: "DECREMENT_CART",
@@ -145,7 +133,6 @@ const CartProvider = ({children})=>{
                     })
                 }
             } catch (error) {
-                console.log(error)
                 alert(error)
             }
         }

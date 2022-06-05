@@ -2,7 +2,6 @@ import { HorizontalCard } from "../../components"
 import { useCart } from "../../contexts/cart-context"
 export default function Cart() {
     const {cart} = useCart()
-console.log("from cartjsx",cart)
     return (
         <section className="container center-div">
             {cart.map(cartItem =>(
