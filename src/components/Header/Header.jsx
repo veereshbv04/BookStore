@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../../contexts/auth-context"
 import { useCart } from "../../contexts/cart-context"
+import { useWishlist } from "../../contexts/wishlist-context"
+
 export default function Header() {
+    const { isLogged, logoutHandler } = useAuth()
 
     const {cartCount} = useCart()
-
-    const {isLogged, logoutHandler} = useAuth()
-
+    const {wishCount, wishItems} = useWishlist()
+    console.log("from header", wishCount, wishItems)
     return (
         <header>
             <nav className="navbar">
@@ -30,12 +32,12 @@ export default function Header() {
                     <div className="badge-icon">2</div>
                     <a href="/pages/cart.html"><span className="fa fa-shopping-cart"></span></a> */}
 
-                    <Link to="/wishlist"><span>wish</span></Link>
+                    <Link to="/wishlist"><span>wish{wishCount}</span></Link>
                     {" "}
                     <Link to="/cart"><span>cart{cartCount}</span></Link>
 
                 </div>
-                {console.log("from header",isLogged)}
+                
 
                 {isLogged?<Link to="/" onClick={logoutHandler}><button className="btn btn-primary">Logout</button></Link>:<div><button className="btn btn-primary"><Link to="/login">Login</Link></button>
                     <button className="btn btn-primary"><Link to="signup">Sign Up</Link></button></div>

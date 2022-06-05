@@ -26,7 +26,7 @@ const WishlistProvider =({children})=>{
                         authorization: encodedToken
                     }
                 })
-                console.log("from wishlistcontext", response.status)
+               
                 if(response.status === 201){
                     dispatch({type:"ADD_TO_WISHLIST", payload:response.data.wishlist})
                     console.log("wishlist dispatch made", response.data.wishlist)
@@ -43,25 +43,25 @@ const WishlistProvider =({children})=>{
     }
 
     async function removeFromWishlist(product){
+        console.log("i am in removefromwishlist")
         if (isLogged) {
             try {
                 const response = await axios.delete(`/api/user/wishlist/:${product._id}`, {
-                    product
-                }, {
                     headers: {
                         authorization: encodedToken
                     }
                 })
-                console.log("from wishlistcontext", response.status)
-                if (response.status === 201) {
+                console.log("from wishlistcontext", response)
+                if (response.status === 200) {
+                    
                     dispatch({
-                        type: "ADD_TO_WISHLIST",
+                        type: "REMOVE_FROM_WISHLIST",
                         payload: response.data.wishlist
                     })
-                    console.log("wishlist dispatch made", response.data.wishlist)
+                    console.log("remove from wishlist dispatch made", response.data.wishlist)
                 }
             } catch (error) {
-                alert(error)
+                // alert(error)
             }
 
 
@@ -72,7 +72,7 @@ const WishlistProvider =({children})=>{
     }
 
     return (
-        <wishlistContext.Provider value={{...initialState, addToWishlist, removeFromWishlist}}>{children}</wishlistContext.Provider>
+        <wishlistContext.Provider value={{wishCount:state.wishCount, wishItems:state.wishItems , addToWishlist, removeFromWishlist}}>{children}</wishlistContext.Provider>
     )
 }
 
