@@ -2,8 +2,11 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
 
+import { useAuth } from "../../contexts/auth-context";
+
 export default function SignUp() {
     const navigate = useNavigate()
+    const { setIsLogged } = useAuth()
     const [newUserData, setNewUserData] = useState({
         firstName:"",
         lastName:"",
@@ -25,6 +28,7 @@ export default function SignUp() {
                 if (response.status === 201) {
                     const encodedToken = response.data.encodedToken
                     localStorage.setItem("encodedToken", encodedToken)
+                    setIsLogged(true)
                     navigate("/products")
                 }
             }catch(error){
