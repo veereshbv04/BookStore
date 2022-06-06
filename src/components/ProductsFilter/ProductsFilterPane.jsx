@@ -36,7 +36,9 @@ export default function ProductFilter() {
                 <label >
                     <input name="category" type="checkbox" value="horror" checked={state.category["horror"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Horror
                 </label>
-
+                <label >
+                    <input name="category" type="checkbox" value="romantic" checked={state.category["romantic"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Romantic
+                </label>
             </div>
 
             <div className="category">

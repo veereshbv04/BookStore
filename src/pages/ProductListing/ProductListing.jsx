@@ -6,13 +6,16 @@ import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFil
 export default function ProductListing() {
     const { state } = useProduct()
     const [productsList, setProductsList] = useState([])
+    console.log(state)
     const FilteredProductList = getFilteredProducts(state, productsList)
+   
     useEffect(() =>
         (async function fetchProducts() {
 
             try {
                 const responseData = await axios.get("/api/products")
                 setProductsList(responseData.data.products)
+                
             } catch (error) {
                 alert(error)
             }

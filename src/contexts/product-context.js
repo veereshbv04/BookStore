@@ -4,7 +4,7 @@ const ProductContext = createContext(null)
 
 const ProductProvider = ({children})=>{
     const initialState  = {
-        category:{fiction:true, horror:true},
+        category:{fiction:true, horror:true,romantic:true},
         rating:"",
         sortBy:"",
         range:"600"
