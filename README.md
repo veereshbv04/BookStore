@@ -1,6 +1,5 @@
 ## BookStore
-
-### Building E-Commerce web app by name BookStore using `react`
+ E-Commerce web app by name BookStore using `react`
 
 ### Introduction
  BookStore is an online platform to sell books built using `react`. 
