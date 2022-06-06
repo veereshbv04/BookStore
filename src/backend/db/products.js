@@ -213,7 +213,7 @@ export const products = [
   // 6 ROMANTIC BOOKS
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/the-mister-original.jpg',
     title: "The Mister",
     author: "EL James",
     price: {
@@ -221,11 +221,11 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 3,
+     rating: 2,
     categoryName: "romantic",
   }, {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/better-than-best-friends.jpg',
     title: "Better Than Best Friends",
     author: "Ahona Sadhu",
     price: {
@@ -233,11 +233,11 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 3,
+     rating: 5,
     categoryName: "romantic",
   }, {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/a-tale-of-two-souls.jpg',
     title: "A Tale Of Two Souls",
     author: "Anand Kumar",
     price: {
@@ -245,11 +245,11 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 3,
+     rating: 2,
     categoryName: "romantic",
   }, {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/promise-me.jpg',
     title: "Promise Me",
     author: "Keshav Aneel",
     price: {
@@ -257,11 +257,11 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 3,
+     rating: 4,
     categoryName: "romantic",
   }, {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/intense-love.jpg',
     title: "Intense Love",
     author: "Manogyna",
     price: {
@@ -269,11 +269,11 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 3,
+     rating: 5,
     categoryName: "romantic",
   }, {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/thegreenroom.jpg',
+    productImage: process.env.PUBLIC_URL + 'assets/book-images/prema-naada-pandita.jpg',
     title: "Prema Naada Pandita",
     author: "S B Akshobhya",
     price: {
@@ -288,8 +288,3 @@ export const products = [
 ];
 
 
-
-
-/*
-
-*/
