@@ -1,3 +1,4 @@
+import "./Header.css"
 import { Link } from "react-router-dom"
 import { useAuth, useCart, useWishlist } from "../../contexts"
 
@@ -15,12 +16,26 @@ export default function Header() {
                 <div >
                     <input className="navbar-search" placeholder="search here" />
                 </div>
+                
                 {
-                isLogged ? <div className="icons">
-                    <Link to="/wishlist"><span>wish{wishCount}</span></Link>
-                    {" "}
-                    <Link to="/cart"><span>cart{cartCount}</span></Link>
-                    </div> : <div className="icons" style={{visibility:"hidden"}}>
+                    isLogged ? 
+                    <div className="icon-div">
+                        <Link to="/cart">
+                                <div class="icons">
+                                    <span class="fa fa-shopping-cart"></span>
+                                    <div class="badge-icon">3</div>
+                                </div>
+                        </Link>
+                        <Link to="/wishlist">
+                                <div className="icons">
+                                    <span className="fa fa-heart"></span>
+                                    <div className="badge-icon">2</div>
+                                </div>
+                        </Link>
+                           
+                    </div>:
+
+                    <div className="icons" style={{ visibility: "hidden" }}>
                         <Link to="/wishlist"><span>wish{wishCount}</span></Link>
                         {" "}
                         <Link to="/cart"><span>cart{cartCount}</span></Link>
