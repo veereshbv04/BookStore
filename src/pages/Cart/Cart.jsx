@@ -1,15 +1,19 @@
+import "./Cart.css"
 import { HorizontalCard } from "../../components"
 import { useCart } from "../../contexts/cart-context"
 export default function Cart() {
     const {cart} = useCart()
     return (
-        <section className="container center-div">
-            {cart.map(cartItem =>(
+        <section className="displaycart">
+            {/* {cart.map(cartItem =>(
                 <HorizontalCard cartItem={cartItem} key={cartItem._id}/>
-            ))}
+            ))} */}
             
-            
-            
+            <div className="cart-items">
+                {cart.map(cartItem => (
+                    <HorizontalCard cartItem={cartItem} key={cartItem._id} />
+                ))}
+            </div>
             <div className="card card-vertical shadow">
 
                 <div className="card-content">
