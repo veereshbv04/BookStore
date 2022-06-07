@@ -1,3 +1,4 @@
+import "./Card.css"
 import { useCart } from "../../contexts/cart-context";
 
 export default function HorizontalCard({cartItem}){
@@ -9,14 +10,14 @@ export default function HorizontalCard({cartItem}){
         <div className="card card-horizontal shadow">
             <img className="img-horizontal" src={productImage} alt="sample image" />
             <div className="card-content">
-                <h2 className="card-title">{title} by {author}</h2>
-                <small>{categoryName}</small>
-                <h3 className="price">{discounted}<small className="offer-saving strike">₹500</small></h3>
-                <span className="offer-saving">40% Offer</span>
-<s>{discount}</s>
+                <h2 className="card-title">{title} </h2>
+                <span>{author}</span>
+                <h3 className="price">{discounted}<small className="offer-saving strike">₹{original}</small></h3>
+                <div className="offer-saving">₹{discount} Saved</div>
                 <div className="quantity">
+                    <p>Quantity</p>
                     <span className="plus" onClick={()=>incrementCart(cartItem)}>+</span>
-                    <input type="number" value={qty} />
+                    <span>{qty}</span>
                     <span className="minus" onClick={() => decrementCart(cartItem)}>-</span>
                 </div>
             </div>

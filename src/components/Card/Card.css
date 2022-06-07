@@ -13,3 +13,21 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
+
+.quantity{
+    display: flex;
+    gap: 1rem;
+    font-size:medium;
+}
+
+.plus, .minus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--section-background);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
