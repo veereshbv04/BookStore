@@ -17,9 +17,9 @@ export default function Card({ product }) {
 
                 <div>
                     <span style={{ marginRight: "4rem" }}>{author}</span>
-                    <span className="price highlight">{discounted} </span>
+                    {/* <span className="price highlight">{discounted} </span> */}
                     <span className="price highlight"><strong>{original}  </strong></span>
-                    <span>{rating}</span>
+                    <span>⭐{rating}</span>
                 </div>
                 {
                     cart.find(item => item._id === _id) ? <button className="btn btn-primary"><Link to="/cart">Go to Cart</Link></button> : <button className="btn btn-primary"><a to="/cart" onClick={() => addToCart(product)}>Add to Cart</a></button>
