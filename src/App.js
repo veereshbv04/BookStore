@@ -1,10 +1,15 @@
 import "./App.css";
-import logo from "./logo.png";
+import {Header} from "./components/index"
+import {ProductListing} from "./pages/index"
+import Router from "./router/router";
+// import logo from "./logo.png";
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome Veeresh B V</h1>
+      <Header/>
+      <Router/>
+      {/* starting from "/" home page routing happens , header remains always as it is a single entity in parent app component */}
     </div>
   );
 }
