@@ -40,14 +40,15 @@ export default function Login() {
 
         <div className="center-div">
             <form className="form">
-                <h2 className="subheading">Login In</h2>
+   
+                <h2 className="subheading" style={{textTransform: 'capitalize'}}>Login In</h2>
                 <input className="input" placeholder="Enter Email Id" onChange={userInputHandler} name="email" required type="email" />
                 <input className="input" placeholder="Enter Password" onChange={userInputHandler} name="password" required type="password" />
 
                 
                 <Link to="/signup"><small className="error-message green">Don't have an acoount ?</small></Link>
                 <Link to="/"><button className="btn btn-primary" type="submit" onClick={loginHandler}>Sign Up</button></Link>
-                <button onClick={() => sendUserData({ email: 'adarshbalika@gmail.com', password: 'adarshbalika'})}>Guest login</button>
+                <button onClick={() => sendUserData({ email: 'testuser@gmail.com', password: 'password'})}>Guest login</button>
             </form>
 
         </div>

@@ -1,5 +1,5 @@
 import "./Cart.css"
-import { HorizontalCard } from "../../components"
+import { HorizontalCard, NotFound } from "../../components"
 import { useCart } from "../../contexts/cart-context"
 export default function Cart() {
     const {cart,cartCount, cartTotalPrice, cartFinalPrice } = useCart()
@@ -11,9 +11,10 @@ export default function Cart() {
             ))} */}
             
             <div className="cart-items">
-                {cart.map(cartItem => (
+                
+                {cart.length>0?cart.map(cartItem => (
                     <HorizontalCard cartItem={cartItem} key={cartItem._id} />
-                ))}
+                )):<NotFound  message="Add items to cart"/>}
             </div>
             <div className="card card-vertical shadow">
 

@@ -60,24 +60,18 @@ const CartProvider = ({children})=>{
         
     }
 
-    async function removeFromCart(){
+    async function removeFromCart(product){
 
         if (isLogged) {
-
-            if (state.cart.some(item => item._id === product._id)) {
-
-                incrementCart(product)
-            } else {
+            
                 try {
-                    const response = await axios.delete("/api/user/cart", {
-                        product
-                    }, {
+                    const response = await axios.delete(`/api/user/cart/${product._id}`,{
                         headers: {
                             authorization: encodedToken
                         }
                     })
 
-                    if (response.status === 201) {
+                    if (response.status === 200) {
                         dispatch({
                             type: "REMOVE_FROM_CART",
                             payload: response.data.cart
@@ -87,7 +81,6 @@ const CartProvider = ({children})=>{
                     alert(error)
                 }
 
-            }
         } else {
             navigate("/login")
         }
@@ -115,26 +108,31 @@ const CartProvider = ({children})=>{
 
     async function decrementCart(product){
         if (isLogged) {
-            try {
-                const response = await axios.post(`api/user/cart/${product._id}`, {
-                    action: {
-                        type: "decrement"
-                    }
-                }, {
-                    headers: {
-                        authorization: encodedToken
-                    }
-                })
-                if (response.status === 200) {
-                    //cart from response contains updated cart no need to worry about anything
-                    dispatch({
-                        type: "DECREMENT_CART",
-                        payload: response.data.cart
+            if(product.qty === 1){
+                removeFromCart(product)
+            }else{
+                try {
+                    const response = await axios.post(`api/user/cart/${product._id}`, {
+                        action: {
+                            type: "decrement"
+                        }
+                    }, {
+                        headers: {
+                            authorization: encodedToken
+                        }
                     })
+                    if (response.status === 200) {
+                        //cart from response contains updated cart no need to worry about anything
+                        dispatch({
+                            type: "DECREMENT_CART",
+                            payload: response.data.cart
+                        })
+                    }
+                } catch (error) {
+                    alert(error)
                 }
-            } catch (error) {
-                alert(error)
             }
+            
         }
     }
 //cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice,

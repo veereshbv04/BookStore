@@ -1,7 +1,7 @@
 export default function NotFound({message}){
     return (
         <>
-            <div>This is page not found</div>
+            <div>There is no content to display</div>
             <h3>{message}</h3>
         </>
     )
