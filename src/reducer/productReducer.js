@@ -1,7 +1,7 @@
 function productReducer(state, action){
     console.log(action)
     const initialState  = {
-        category:{fiction:true, horror:true, romantic:true},
+        category:{fiction:false, horror:false, romantic:false},
         rating:1,
         sortBy:"",
         range:"600"
