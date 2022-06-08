@@ -31,7 +31,7 @@ export default function Card({ product }) {
                     wishItems.find(item => item._id === _id) ? <button className="btn btn-primary"><a to="#" onClick={() => removeFromWishlist(product)} >Remove from Wishlist</a></button> : <button className="btn btn-primary"><a to="#" onClick={() => addToWishlist(product)}>Add to Wishlist</a></button>
                     
                 }
-                <span className="fa fa-heart-o heart w3-xxlarge"></span>
+                <span className="fa fa-heart heart w3-xxlarge"></span>
             </div>
         </div >
 
