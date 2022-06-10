@@ -1,4 +1,3 @@
-import { unstable_HistoryRouter } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 
 /**
@@ -8,9 +7,6 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
 // 3 caterories > fiction, horror, romantic
-// 6 romantic
-// 8 horror 
-// 7 fiction
   // 7 Fiction Books
   {
     _id: uuid(),
@@ -210,10 +206,16 @@ export const products = [
     categoryName: "horror",
   },
 
+];
+
+
+
+
+/*
+
   // 6 ROMANTIC BOOKS
   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/the-mister-original.jpg',
     title: "The Mister",
     author: "EL James",
     price: {
@@ -221,11 +223,10 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 2,
     categoryName: "romantic",
-  }, {
+  },
+  {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/better-than-best-friends.jpg',
     title: "Better Than Best Friends",
     author: "Ahona Sadhu",
     price: {
@@ -233,11 +234,10 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 5,
     categoryName: "romantic",
-  }, {
+  },
+   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/a-tale-of-two-souls.jpg',
     title: "A Tale Of Two Souls",
     author: "Anand Kumar",
     price: {
@@ -245,11 +245,10 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 2,
     categoryName: "romantic",
-  }, {
+  },
+   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/promise-me.jpg',
     title: "Promise Me",
     author: "Keshav Aneel",
     price: {
@@ -257,11 +256,10 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 4,
     categoryName: "romantic",
-  }, {
+  },
+   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/intense-love.jpg',
     title: "Intense Love",
     author: "Manogyna",
     price: {
@@ -269,11 +267,10 @@ export const products = [
       discounted: 699,
       discount: 20
     },
-     rating: 5,
     categoryName: "romantic",
-  }, {
+  },
+   {
     _id: uuid(),
-    productImage: process.env.PUBLIC_URL + 'assets/book-images/prema-naada-pandita.jpg',
     title: "Prema Naada Pandita",
     author: "S B Akshobhya",
     price: {
@@ -281,10 +278,6 @@ export const products = [
       discounted: 399,
       discount: 10
     },
-     rating: 3,
     categoryName: "romantic",
-  },
-
-];
-
-
+  }, 
+*/

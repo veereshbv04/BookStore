@@ -1,4 +1,4 @@
-import { useProduct } from "../../contexts"
+import { useProduct } from "../../contexts/product-context"
 export default function ProductFilter() {
     const { state, dispatch } = useProduct();
     const { rating, sortBy } = state;
@@ -9,7 +9,7 @@ export default function ProductFilter() {
             <div className="filter highlight">
                 filter
                 <button type="reset" onClick={() => {
-                   
+                    console.log("from clear");
                     dispatch({ type: "CLEAR_ALL" })
                 }}>Reset</button>
                 {/* error while adding this, check bookmarked page */}
@@ -36,9 +36,7 @@ export default function ProductFilter() {
                 <label >
                     <input name="category" type="checkbox" value="horror" checked={state.category["horror"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Horror
                 </label>
-                <label >
-                    <input name="category" type="checkbox" value="romantic" checked={state.category["romantic"]} onChange={(event) => dispatch({ type: "CATEGORY", payload: event.target.value })} />Romantic
-                </label>
+
             </div>
 
             <div className="category">
@@ -91,7 +89,7 @@ export default function ProductFilter() {
             <div className="category">
                 <h4 className="highlight">Sort by</h4>
 
-                <label htmlFor="radio-input-1">
+                <label for="radio-input-1">
                     <input
                         type="radio"
                         id="radio-input-1"
@@ -102,7 +100,7 @@ export default function ProductFilter() {
                     />
                     <span>Price - Low to high</span>
                 </label>
-                <label htmlFor="radio-input-2">
+                <label for="radio-input-2">
                     <input
                         type="radio"
                         id="radio-input-2"
