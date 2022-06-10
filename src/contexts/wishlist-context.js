@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {useAuth} from "./auth-context"
 
 import {wishlistReducer} from "../reducer/wishlistReducer"
+import { Notify } from "../components/Notify";
 const wishlistContext = createContext()
 
 const WishlistProvider =({children})=>{
@@ -29,14 +30,16 @@ const WishlistProvider =({children})=>{
                
                 if(response.status === 201){
                     dispatch({type:"ADD_TO_WISHLIST", payload:response.data.wishlist})
+                    Notify("success", "Added  to wishlist")
                 }
             }catch(error){
-                alert(error)
+                Notify("error", "Can't add to wishlist")
             }
             
             
 
         }else{
+            Notify("error", "Please login")
             navigate("/login")
         }
     }
@@ -56,14 +59,16 @@ const WishlistProvider =({children})=>{
                         type: "REMOVE_FROM_WISHLIST",
                         payload: response.data.wishlist
                     })
+                    Notify("info", "Removed from wishlist")
                 }
             } catch (error) {
-                alert(error)
+                Notify("error", "Cannot remove from wishlist")
             }
 
 
 
         } else {
+            Notify("error", "Please login")
             navigate("/login")
         }
     }

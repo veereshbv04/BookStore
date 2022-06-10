@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
-
+import { Notify } from "../../components/Notify";
 import { useAuth } from "../../contexts";
 
 export default function SignUp() {
@@ -30,9 +30,10 @@ export default function SignUp() {
                     localStorage.setItem("encodedToken", encodedToken)
                     setIsLogged(true)
                     navigate("/products")
+                    Notify("success", "Logged In")
                 }
             }catch(error){
-                alert(error)
+                Notify("error", "Error in logging in")
             }
         }else{
             alert("Password should match")

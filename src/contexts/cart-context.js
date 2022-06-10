@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext,  useReducer } from "react";
 import { useNavigate } from "react-router-dom";
+import { Notify } from "../components/Notify";
 import { cartReducer } from "../reducer/cartReducer";
 import { useAuth } from "./auth-context";
 const CartContext = createContext()
@@ -26,8 +27,6 @@ const CartProvider = ({children})=>{
 
     async function addToCart(product){
     
-        console.log("I am in addToCart")
-
         if(isLogged){
             
             if(state.cart.some(item => item._id === product._id)){
@@ -48,13 +47,15 @@ const CartProvider = ({children})=>{
                             type: "ADD_TO_CART",
                             payload: response.data.cart
                         })
+                        Notify("success", "Added to cart")
                     }
                 }catch(error){
-                    alert(error)
+                    Notify("error", "cannot add to cart")
                 }
                
             }
         }else{
+            Notify("error", "Please login")
             navigate("/login")
         }
         
@@ -76,12 +77,14 @@ const CartProvider = ({children})=>{
                             type: "REMOVE_FROM_CART",
                             payload: response.data.cart
                         })
+                        Notify("success", "Removed from cart")
                     }
                 } catch (error) {
-                    alert(error)
+                    Notify("error", "Cannot remove from cart")
                 }
 
         } else {
+            Notify("error", "Please login")
             navigate("/login")
         }
     }
@@ -99,6 +102,7 @@ const CartProvider = ({children})=>{
                 if(response.status === 200){
                     //cart from response contains updated cart no need to worry about anything
                     dispatch({type:"INCREMENT_CART", payload:response.data.cart})
+                     Notify("success", "Item quantity incremented")
                 }
             }catch(error){
                 alert(error)
@@ -127,9 +131,10 @@ const CartProvider = ({children})=>{
                             type: "DECREMENT_CART",
                             payload: response.data.cart
                         })
+                         Notify("success", "Item quantity decremented")
                     }
                 } catch (error) {
-                    alert(error)
+                    Notify("error", "Cannot decrement Item quantity")
                 }
             }
             

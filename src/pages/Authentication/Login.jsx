@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
 import { useAuth } from "../../contexts/auth-context";
-
+import { Notify } from "../../components/Notify";
 export default function Login() {
     const navigate = useNavigate()
     const [userData, setUserData] = useState({email:"", password:""})
@@ -27,6 +27,7 @@ export default function Login() {
                 localStorage.setItem("encodedToken", encodedToken)
                 setIsLogged(true)
                 navigate("/products")
+                Notify("success", "Logged In")
             } 
         }catch(error){
             

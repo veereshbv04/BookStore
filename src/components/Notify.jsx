@@ -1,14 +1,11 @@
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Notify() {
-    const notify = () => toast("Wow so easy!");
-
-    return (
-        <div>
-            <button onClick={notify}>Notify!</button>
-            <ToastContainer />
-        </div>
-    );
+export function Notify(type, message) {
+    return toast(message, {
+        position:'top-center',
+        type:type,
+        autoClose:1000,
+    })
 }

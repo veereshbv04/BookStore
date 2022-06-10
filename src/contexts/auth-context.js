@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Notify } from "../components/Notify";
 
 const AuthContext = createContext()
 
@@ -18,6 +19,7 @@ const AuthProvider = ({children})=>{
     function logoutHandler(){
         setIsLogged(false)
         localStorage.removeItem("token")
+        Notify("info", "You are logged out")
         navigate("/")
     
     }
