@@ -1,29 +1,30 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Card, ProductsFilter } from "../../components"
-import { useProduct } from "../../contexts/product-context"
+import { useProduct } from "../../contexts"
 import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFilterUtils"
 export default function ProductListing() {
     const { state } = useProduct()
-    console.log(state)
     const [productsList, setProductsList] = useState([])
+   
     const FilteredProductList = getFilteredProducts(state, productsList)
-    console.log(FilteredProductList)
+   
     useEffect(() =>
         (async function fetchProducts() {
 
             try {
                 const responseData = await axios.get("/api/products")
                 setProductsList(responseData.data.products)
+                
             } catch (error) {
-                console.log(error)
+                alert(error)
             }
         })()
         , [])
 
     return (
         <>
-            <h3 className="subheading">Showing all Books</h3>
+            <h3 className="subheading">Showing {FilteredProductList.length} Books</h3>
             <div className="grid grid-2-8">
                 <ProductsFilter />
                 <section className="product-display wrap">

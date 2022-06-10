@@ -4,10 +4,10 @@ const ProductContext = createContext(null)
 
 const ProductProvider = ({children})=>{
     const initialState  = {
-        category:{fiction:true, horror:true},
+        category:{fiction:false, horror:false,romantic:false},
         rating:"",
         sortBy:"",
-        range:"600"
+        range:"1000"
     }
     const [state, dispatch] = useReducer(productReducer,initialState)
     return(
