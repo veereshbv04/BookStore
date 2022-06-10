@@ -64,8 +64,6 @@ export function makeServer({ environment = "development" } = {}) {
 
     routes() {
       this.namespace = "api";
-    //  this.passthrough("/auth")   // ADDED THIS NEED TO STUDY
-    // this.passthrough("api")
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));

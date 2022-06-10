@@ -247,13 +247,9 @@ input[type="reset"]{
 .heart{
         position: absolute;
         top:0;
-        right: 0;
         color: var(--primary-color);
         padding: 5px;
         border-radius: 50%;
-        cursor: pointer;
-}
-
-.heart:hover{
-    color: rgb(245, 70, 70);
+        background-color: var(--background-color);
+    
 }
