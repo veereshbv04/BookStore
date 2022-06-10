@@ -27,9 +27,9 @@ export default function Header() {
                             </div>
                         </Link>
                         <Link to="/cart">
-                                <div class="icons">
-                                    <span class="fa fa-shopping-cart"></span>
-                                    <div class="badge-icon">{cartCount}</div>
+                                <div className="icons">
+                                    <span className="fa fa-shopping-cart"></span>
+                                    <div className="badge-icon">{cartCount}</div>
                                 </div>
                         </Link>
                     </div>:

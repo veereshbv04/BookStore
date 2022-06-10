@@ -6,7 +6,7 @@ import { getFilteredProducts } from "../../components/ProductsFilter/ProductsFil
 export default function ProductListing() {
     const { state } = useProduct()
     const [productsList, setProductsList] = useState([])
-    console.log(state)
+   
     const FilteredProductList = getFilteredProducts(state, productsList)
    
     useEffect(() =>

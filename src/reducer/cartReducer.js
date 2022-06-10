@@ -2,7 +2,6 @@ function cartReducer(state, {type, payload}){
     //abstracting reducer functions
     // need to add discount prices
 
-    console.log(state)
     function cartCountReduce(acc, curr){
         return acc+=curr.qty
     }

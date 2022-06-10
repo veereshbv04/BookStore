@@ -2,7 +2,6 @@ import { useProduct } from "../../contexts/product-context"
 
 const getSortedProducts = ({sortBy}, products)=>{
     const sortedProducts = [...products]
-       console.log(products)
     switch(sortBy){
 
         case "HIGH_TO_LOW":
@@ -87,9 +86,7 @@ const getCategorisedProduct = ({category}, products)=>{
 }
 
 const getProductsInRange = ({range}, products)=>{
-    console.log(products)
     let test = products.filter(product => product.price.discounted <= range)
-   
     return test
 }
 
