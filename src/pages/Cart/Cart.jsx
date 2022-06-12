@@ -2,24 +2,21 @@ import "./Cart.css"
 import { HorizontalCard, NotFound } from "../../components"
 import { useCart } from "../../contexts/cart-context"
 export default function Cart() {
-    const {cart,cartCount, cartTotalPrice, cartFinalPrice } = useCart()
+    const { cart, cartCount, cartTotalPrice, cartFinalPrice } = useCart()
     console.log(cart, cartCount, cartTotalPrice, cartFinalPrice)
     return (
         <section className="displaycart">
-            {/* {cart.map(cartItem =>(
-                <HorizontalCard cartItem={cartItem} key={cartItem._id}/>
-            ))} */}
-            
+
             <div className="cart-items">
-                
-                {cart.length>0?cart.map(cartItem => (
+
+                {cart.length > 0 ? cart.map(cartItem => (
                     <HorizontalCard cartItem={cartItem} key={cartItem._id} />
-                )):<NotFound  message="Add items to cart"/>}
+                )) : <NotFound message="Add items to cart" />}
             </div>
             <div className="card card-vertical shadow">
 
                 <div className="card-content">
-                    <h1 className="card-title" style={{color:"green"}}>Price Details</h1>
+                    <h1 className="card-title" style={{ color: "green" }}>Price Details</h1>
                     <div className="cart-price">
                         <div className="price-field">
                             <span>Total Items</span>
@@ -38,7 +35,7 @@ export default function Cart() {
                             <span>₹{cartFinalPrice}</span>
                         </div>
                     </div>
-                
+
                 </div>
                 <button className="btn btn-primary">Place Order </button>
             </div>

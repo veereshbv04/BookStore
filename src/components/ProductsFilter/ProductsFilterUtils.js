@@ -19,33 +19,6 @@ const getRatedProducts =({rating}, products)=>{
 
 const getCategorisedProduct = ({category}, products)=>{
     
-    // const categoryArray = []
-    // for(const [key, value] of Object.entries(category)){
-    //     if(value){
-    //         categoryArray.push(key)
-    //     }
-    //     console.log("value of a", categoryArray)
-    // }
-    // let finalcategory = []
-    // console.log(category)
-    // for(let category of categoryArray){
-    //     switch (category) {
-    //         case "horror":
-    //             console.log("horror")
-    //             finalcategory =  products.filter(product => product.categoryName === "horror")
-    //         case "fiction":
-    //             console.log("fiction")
-    //             finalcategory = [...finalcategory, ...products.filter(product => product.categoryName === "fiction")]
-    //         case "romantic":
-    //             console.log("romantic")
-    //             finalcategory = [...finalcategory, ...products.filter(product => product.categoryName === "romantic")]
-    //             break
-    //         default:
-    //             products;
-    //     }
-    // }
-    // console.log(finalcategory)
-    // return finalcategory
     let finalcategory = []
     if(category["fiction"] && category["horror"] && category["romantic"]){
         console.log("all three yes")
@@ -69,20 +42,7 @@ const getCategorisedProduct = ({category}, products)=>{
         return products
     }
 
-    // if (category["fiction"] && category["horror"] && category["romantic"]) {
-    //     console.log("all three yes")
-    //     return products
-    // } else if (category["fiction"]) {
-    //     return products.filter(product => product.categoryName === "fiction")
-    // } else if (category["horror"]) {
-    //     return products.filter(product => product.categoryName === "horror")
-    // } else if (category["romantic"]) {
-    //     const a = products.filter(product => product.categoryName === "romantic")
-    //     console.log("from romantic", a)
-    //     return products.filter(product => product.categoryName === "romantic")
-    // } else {
-    //     return products
-    // }
+    
 }
 
 const getProductsInRange = ({range}, products)=>{

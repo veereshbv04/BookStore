@@ -1,4 +1,4 @@
-export default function NotFound({message}){
+export default function NotFound({ message }) {
     return (
         <>
             <h1>There is no content to display</h1>

@@ -9,11 +9,10 @@ export default function ProductFilter() {
             <div className="filter highlight">
                 filter
                 <button type="reset" onClick={() => {
-                   
+
                     dispatch({ type: "CLEAR_ALL" })
                 }}>Reset</button>
-                {/* error while adding this, check bookmarked page */}
-                {/* <input type="reset" onClick={dispatch({ type: "CLEAR_ALL" })} /> */}
+               
             </div>
 
             <div className="scale">
@@ -22,7 +21,7 @@ export default function ProductFilter() {
                     <span>100</span>
                     <span>1000</span>
                 </div>
-                {/* (event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value }) */}
+             
                 <input type="range" min="200" max="1000" step="100" value={state.range} className="slider" onChange={(event) => dispatch({ type: "PRICE_RANGE", payload: event.target.value })} />
                 <span>{state.range}</span>
             </div>
@@ -44,7 +43,7 @@ export default function ProductFilter() {
             <div className="category">
                 <h4 className="highlight">Rating</h4>
 
-                {/* ggg */}
+               
                 <label>
                     <input
                         type="radio"
@@ -96,12 +95,12 @@ export default function ProductFilter() {
                         type="radio"
                         id="radio-input-1"
                         name="radio-item"
-                        // value="lowToHigh"
                         checked={sortBy === "LOW_TO_HIGH"}
                         onChange={() => dispatch({ type: "SORT_BY", payload: "LOW_TO_HIGH" })}
                     />
                     <span>Price - Low to high</span>
                 </label>
+                
                 <label htmlFor="radio-input-2">
                     <input
                         type="radio"

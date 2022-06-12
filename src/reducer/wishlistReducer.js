@@ -6,8 +6,6 @@ function wishlistReducer(state, {type, payload}){
 
             return {...state, wishItems:payload, wishCount:payload.length}
             
-          
-    
         default:
             state
     }

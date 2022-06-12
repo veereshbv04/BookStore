@@ -14,7 +14,7 @@ const AuthProvider = ({children})=>{
         if(userToken){
             setIsLogged(true)
         }
-    }, [userToken])
+    }, [])
 
     function logoutHandler(){
         setIsLogged(false)

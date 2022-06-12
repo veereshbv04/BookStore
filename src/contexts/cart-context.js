@@ -100,7 +100,7 @@ const CartProvider = ({children})=>{
                     }
                 })
                 if(response.status === 200){
-                    //cart from response contains updated cart no need to worry about anything
+                   
                     dispatch({type:"INCREMENT_CART", payload:response.data.cart})
                      Notify("success", "Item quantity incremented")
                 }
@@ -126,7 +126,7 @@ const CartProvider = ({children})=>{
                         }
                     })
                     if (response.status === 200) {
-                        //cart from response contains updated cart no need to worry about anything
+                        
                         dispatch({
                             type: "DECREMENT_CART",
                             payload: response.data.cart
@@ -140,7 +140,7 @@ const CartProvider = ({children})=>{
             
         }
     }
-//cart:state.cart, cartCount:state.cartCount, cartTotalPrice:state.cartTotalPrice, cartFinalPrice:state.cartFinalPrice,
+
     return (
     <CartContext.Provider value={{...state, addToCart, removeFromCart, incrementCart, decrementCart}}>
 

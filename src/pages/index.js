@@ -5,4 +5,11 @@ import WishList from "./WishList/WishList"
 import Login from "./Authentication/Login"
 import SignUp from "./Authentication/SignUp"
 
-export {Cart, ProductListing, LandingPage, WishList, Login, SignUp}
+export {
+    Cart,
+    ProductListing,
+    LandingPage,
+    WishList,
+    Login,
+    SignUp
+}
